@@ -4,7 +4,7 @@ Backup the configuration files before my laptop decides to go for a swim.
 
 # install:
 ```
-git clone $url
+git clone https://github.com/GijsGroote/.dotfiles
 cd .dotfiles
 ./install
 ```
