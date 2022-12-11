@@ -5,7 +5,7 @@
 - clean: ['~', '~/.config/']
 
 - link:
-    ~/.bashrc: bash
+    ~/.bashrc: bash/.bashrc
     ~/.config/nvim: nvim
     ~/.config/kitty: kitty
 
