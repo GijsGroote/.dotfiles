@@ -1,15 +1,15 @@
- defaults:
+- defaults:
     link:
       relink: true
 
-- clean: ['~']
+- clean: ['~', '~/.config/']
 
 - link:
-    ~/.nvim: nvim
     ~/.bashrc: bash
-    ~/.config/kitty/kitty.conf: kitty
+    ~/.config/nvim: nvim
+    ~/.config/kitty: kitty
 
-- create:
+# - create:
     # - ~/downloads
     # - ~/.vim/undo-history
 
