@@ -114,22 +114,21 @@ export EDITOR=~/dev/nvim/./nvim.sh
 export VISUAL=$EDITOR
 
 
+# TODO: this should be done by install.conf.yaml innit?
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # shorten the name for python3 and python2
 alias p3='python3' 
 alias p2='python2' 
 
-# make sure that the DPMS is disabled
-xset s off && xset -dpms
 
 # add latex directory to path
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 
-
-
 # create vim normal mode on ESC
 # set -o vi
-cd Documents/semantic-thinking-robot
+
+# change directory to semantic-thinking-robot
+cd ~/Documents/semantic-thinking-robot
 
 clear

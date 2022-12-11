@@ -10,4 +10,10 @@ cd .dotfiles
 ```
 
 Happy coding ❤️k
+# TODO: 
+- .bash_profile
+- .gitconfig
+- .poetry?
+- .fzf?
+- .others?
 

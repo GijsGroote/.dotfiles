@@ -6,6 +6,7 @@
 
 - link:
     ~/.bashrc: bash/.bashrc
+    ~/.profile: bash/.profile
     ~/.config/nvim: nvim
     ~/.config/kitty: kitty
 
