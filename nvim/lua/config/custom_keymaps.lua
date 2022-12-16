@@ -11,6 +11,17 @@ function M.snake_case()
     vim.cmd("normal! viws" ..  snake_case_word)
 end
 
+function M.to_object()
+
+    vim.cmd("echo 'test'")
+
+    vim.cmd("<Cmd>s/obstacles/objects/g<CR>")
+    -- _cmds["singular"]= ":%s/obstacle/object/g"
+    -- _cmds["Plural"]= ":%s/Obstacles/Objects/g"
+    -- _cmds["Singular"]=  ":%s/Obstacle/Object/g"
+
+end
+
 return M
 
 

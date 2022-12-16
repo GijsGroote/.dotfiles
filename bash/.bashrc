@@ -128,7 +128,8 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # create vim normal mode on ESC
 # set -o vi
 
-# change directory to semantic-thinking-robot
-cd ~/Documents/semantic-thinking-robot
+# change directory
+# cd ~/Documents/semantic-thinking-robot
+cd ~/Documents/thesis-report
 
 clear

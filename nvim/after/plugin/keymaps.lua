@@ -1,6 +1,8 @@
 local keymap = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 
+-- temp custom keymap
+keymap("n", "<leader>tt", ":%s/obstacles/objects/ge<CR> <Bar> :%s/obstacle/object/ge<CR> <Bar> :%s/Obstacles/Objects/ge<CR> <bar> :%s/Obstacle/Object/ge<CR>", {})
 
 -- toggle nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", default_opts)
@@ -42,7 +44,6 @@ keymap("n", "<leader>n", "i<CR><C-c>k$", default_opts)
 -- JSON formatter
 keymap("n", "<leader>j", "<Cmd>%!jq .<CR>$", default_opts)
 
-
 -- copy to system clipboard
 keymap("v", "<leader>y", '"+y', default_opts)
 
@@ -53,9 +54,13 @@ keymap("v", "<leader>p", '"+P', default_opts)
 keymap("n", "<leader>p", '"+P', default_opts)
 
 -- turn on true zen mode
-vim.api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
-vim.api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
-vim.api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", {})
-vim.api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
-vim.api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
+keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
+keymap("n", "<leader>zm", "<Cmd>TZMinimalist<CR>", {})
+keymap("n", "<leader>za", "<Cmd>TZAtaraxis<CR>", {})
+keymap("n", "<leader>zq", "<Cmd>qa<CR>", {})
+
+
+
+
+
 
