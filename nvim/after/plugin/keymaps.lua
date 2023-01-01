@@ -59,8 +59,7 @@ keymap("n", "<leader>zm", "<Cmd>TZMinimalist<CR>", {})
 keymap("n", "<leader>za", "<Cmd>TZAtaraxis<CR>", {})
 keymap("n", "<leader>zq", "<Cmd>qa<CR>", {})
 
-
-
+keymap("n", "<leader>md", "<Cmd>MarkdownPreview<CR>", {})
 
 
 

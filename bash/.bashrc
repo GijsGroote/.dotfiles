@@ -129,7 +129,11 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # set -o vi
 
 # change directory
-# cd ~/Documents/semantic-thinking-robot
-cd ~/Documents/thesis-report
+cd ~/Documents/semantic-thinking-robot
+poetry shell
+# cd ~/Documents/thesis-report
+
+# kitty view image
+alias icat="kitty +kitten icat"
 
 clear

@@ -78,6 +78,9 @@ function M.setup()
 			end,
 		}
 
+    -- absolute and relative line numbering
+    use { "sitiom/nvim-numbertoggle" } 
+
     -- Vimtex for latex documents
     use {'lervag/vimtex'}
 
@@ -170,15 +173,15 @@ function M.setup()
           -- or just leave it empty :)
         }
       end,
-    }) 
+    })
 
-    -- absolute and relative line numbering
-    use {
-      "sitiom/nvim-numbertoggle",
-      config = function()
-        require("numbertoggle").setup()
-      end
-    }
+    -- markdown preview
+    use({"iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
   end
   packer_init()
   local packer = require "packer"

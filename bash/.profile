@@ -31,3 +31,4 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # make sure that the DPMS is disabled
 xset s off && xset -dpms
+
