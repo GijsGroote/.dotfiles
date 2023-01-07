@@ -124,6 +124,8 @@ alias p2='python2'
 
 # add latex directory to path
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
+# add mcrl2 directory to path
+export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 
 # create vim normal mode on ESC
 # set -o vi
@@ -132,6 +134,15 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 cd ~/Documents/semantic-thinking-robot
 poetry shell
 # cd ~/Documents/thesis-report
+
+# fast commit 
+function fastcommit {
+  if [[ $# -eq 0 ]]
+    then git add . && git commit
+  else
+    git add . && git commit -m "$*"
+  fi
+}
 
 # kitty view image
 alias icat="kitty +kitten icat"

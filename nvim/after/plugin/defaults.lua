@@ -24,9 +24,16 @@ opt.path:append "**"
 
 g.python3_host_prog = "/usr/local/bin/python3"
 
--- set default file for plaintext files to latex
--- vim.cmd[[
--- let g:tex_flavor = "plain"
--- let g:tex_flavor = "context"
--- let g:tex_flavor = "latex"
--- ]]
+
+-- close quickfix list after selecting option
+api.nvim_create_autocmd(
+  "FileType", {
+  pattern={"qf"},
+  command=[[nnoremap <buffer> <CR> <CR>:cclose<CR>]]})
+
+-- windows to close with "q"
+api.nvim_create_autocmd(
+  "FileType",
+  { pattern = { "help", "startuptime", "qf", "lspinfo" }, command = [[nnoremap <buffer><silent> q :close<CR>]] }
+)
+
