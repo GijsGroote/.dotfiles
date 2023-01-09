@@ -54,12 +54,12 @@ keymap("v", "<leader>p", '"+P', default_opts)
 keymap("n", "<leader>p", '"+P', default_opts)
 
 -- turn on true zen mode
-keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
-keymap("n", "<leader>zm", "<Cmd>TZMinimalist<CR>", {})
-keymap("n", "<leader>za", "<Cmd>TZAtaraxis<CR>", {})
-keymap("n", "<leader>zq", "<Cmd>qa<CR>", {})
+keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", default_opts)
+keymap("n", "<leader>zm", "<Cmd>TZMinimalist<CR>", default_opts)
+keymap("n", "<leader>za", "<Cmd>TZAtaraxis<CR>", default_opts)
+keymap("n", "<leader>zq", "<Cmd>qa<CR>", default_opts)
+keymap("n", "<leader>md", "<Cmd>MarkdownPreview<CR>", default_opts)
 
-keymap("n", "<leader>md", "<Cmd>MarkdownPreview<CR>", {})
-
-
+-- remove all trailing white space in file
+keymap("n", "<leader>rw", "<Cmd>%s/\\s\\+$//e<CR>", default_opts)
 
