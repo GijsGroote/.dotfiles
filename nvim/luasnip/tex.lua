@@ -12,6 +12,11 @@ local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 return {
 
+
+  -- Can be delted when you are burger
+  s({trig="hgraph"},{t("\\ac{hgraph}")}),
+  s({trig="kgraph"},{t("\\ac{kgraph}"),}),
+
   s(
   {
     trig="ci",
@@ -25,9 +30,9 @@ return {
     t("}"),
   }
   ),
-  s({trig="tt", dscr="Expands 'tt' into '\texttt{}'"},
+  s({trig="it", dscr="Expands 'it' into '\textit{}'"},
   {
-    t("\\texttt{"),
+    t("\\textit{"),
     i(1),
     t("}"),
   }
@@ -52,7 +57,7 @@ return {
   {
     t({"\\begin{figure}[H]",
     "    \\centering",
-    "    \\includegraphics{figures/}",
+    "    \\includegraphics[width=5cm]{figures/}",
     "    \\caption{}",
     "    \\label{}",
     "\\end{figure}"

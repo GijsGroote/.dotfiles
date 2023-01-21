@@ -131,12 +131,12 @@ export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 # set -o vi
 
 # change directory
-cd ~/Documents/semantic-thinking-robot
-poetry shell
-# cd ~/Documents/thesis-report
+# cd ~/Documents/semantic-thinking-robot
+# poetry shell
+cd ~/Documents/thesis-report
 
 # fast commit 
-function fastcommit {
+function fc {
   if [[ $# -eq 0 ]]
     then git add . && git commit
   else
@@ -146,5 +146,8 @@ function fastcommit {
 
 # kitty view image
 alias icat="kitty +kitten icat"
+
+# put this into somethimg more private then a public repo.....dude
+export OPENAI_API_KEY=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
 
 clear

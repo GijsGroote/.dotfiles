@@ -97,7 +97,7 @@ function M.setup()
     -- IndentLine
 		use {
 			"lukas-reineke/indent-blankline.nvim",
-			event = "BufReadPre",
+			event = "BufEnter",
 			config = function()
 				require("config.indentblankline").setup()
 			end,
@@ -118,7 +118,7 @@ function M.setup()
 		-- Whichkey
 		use {
 			"folke/which-key.nvim",
-			event = "vimEnter",
+			event = "BufEnter",
 			config = function()
 				require("config.whichkey").setup()
       end,
@@ -136,7 +136,7 @@ function M.setup()
     use {
       "neovim/nvim-lspconfig",
       opt = true,
-      event = "BufReadPre",
+      event = "BufEnter", -- Prefer BufReadPre.. figure out how to debug
       wants = { "nvim-lsp-installer" },
       config = function()
         require("config.lsp").setup()
@@ -181,6 +181,21 @@ function M.setup()
     })
 
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+    -- ChatGPT
+    use({
+      "jackMort/ChatGPT.nvim",
+      config = function()
+        require("chatgpt").setup({
+          -- optional configuration
+        })
+      end,
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+    })
 
   end
   packer_init()
