@@ -117,6 +117,18 @@ export VISUAL=$EDITOR
 # TODO: this should be done by install.conf.yaml innit?
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# fast commit 
+function fc {
+  if [[ $# -eq 0 ]]
+    then git add . && git commit
+  else
+    git add . && git commit -m "$*"
+  fi
+}
+
+# kitty terminator view image
+alias icat="kitty +kitten icat"
+
 # shorten the name for python3 and python2
 alias p3='python3' 
 alias p2='python2' 
@@ -131,23 +143,8 @@ export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 # set -o vi
 
 # change directory
-# cd ~/Documents/semantic-thinking-robot
-# poetry shell
-cd ~/Documents/thesis-report
-
-# fast commit 
-function fc {
-  if [[ $# -eq 0 ]]
-    then git add . && git commit
-  else
-    git add . && git commit -m "$*"
-  fi
-}
-
-# kitty view image
-alias icat="kitty +kitten icat"
-
-# put this into somethimg more private then a public repo.....dude
-export OPENAI_API_KEY=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
+cd ~/Documents/semantic-thinking-robot
+poetry shell
+# cd ~/Documents/thesis-report
 
 clear
