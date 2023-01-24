@@ -84,6 +84,16 @@ function M.setup()
     -- Vimtex for latex documents
     use {'lervag/vimtex'}
 
+    -- fuzzy search the citation file
+    use { "nvim-telescope/telescope-bibtex.nvim",
+      requires = {
+        {'nvim-telescope/telescope.nvim'},
+      },
+      config = function ()
+        require"telescope".load_extension("bibtex")
+      end,
+    }
+
 		-- Better Comment
 		use {
 			"numToStr/Comment.nvim",
@@ -183,19 +193,19 @@ function M.setup()
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     -- ChatGPT
-    use({
-      "jackMort/ChatGPT.nvim",
-      config = function()
-        require("chatgpt").setup({
-          -- optional configuration
-        })
-      end,
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
-    })
+    -- use({
+    --   "jackMort/ChatGPT.nvim",
+    --   config = function()
+    --     require("chatgpt").setup({
+    --       -- optional configuration
+    --     })
+    --   end,
+    --   requires = {
+    --     "MunifTanjim/nui.nvim",
+    --     "nvim-lua/plenary.nvim",
+    --     "nvim-telescope/telescope.nvim"
+    --   }
+    -- })
 
   end
   packer_init()

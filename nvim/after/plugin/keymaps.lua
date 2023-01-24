@@ -13,10 +13,6 @@ keymap("n", "<ESC>", "<Cmd>nohlsearch<Bar>:echo<CR>", default_opts)
 -- fuzzy finder
 keymap("n", "<leader>f", "<Cmd>Files<CR>", default_opts)
 
--- quote/unquote word     My first real remap :) it still qould use come work though
--- TODO: UNFINISHED KEYMAP, and also a incorrect one, gijs 11 nov 2022!!
--- keymap("n", "<leader>i", '<lbi"<C-[><lea"<C-[>', default_opts)
-
 -- harpoon to navigate between multiple scripts 
 keymap("n", "<leader>h", '<Cmd>lua require("harpoon.mark").add_file()<CR><Cmd>lua print("file harpooned!")<CR>' , default_opts)
 keymap("n", "<leader>H", '<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', default_opts)
@@ -63,3 +59,5 @@ keymap("n", "<leader>md", "<Cmd>MarkdownPreview<CR>", default_opts)
 -- remove all trailing white space in file
 keymap("n", "<leader>rw", "<Cmd>%s/\\s\\+$//e<CR>", default_opts)
 
+-- popup fuzzy bibtex citation finder
+keymap("n", "<leader>ci", "<Cmd>Telescope bibtex<CR>", default_opts)
