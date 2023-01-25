@@ -75,13 +75,25 @@ local function normal_keymap()
       m = { "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<Cr>", "UI Menu" },
       c = { "<Cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<Cr>", "Command Menu" },
     },
-    -- ["1"] = { "<Cmd>lua require('harpoon.ui').nav_file(1) <Cr>", "File 1" },
-    -- ["2"] = { "<Cmd>lua require('harpoon.ui').nav_file(2) <Cr>", "File 2" },
-    -- ["3"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(1)<Cr>", "Terminal 1" },
-    -- ["4"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(2)<Cr>", "Terminal 2" },
-    -- ["5"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,1)<Cr>", "Command 1" },
-    -- ["6"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,2)<Cr>", "Command 2" },
-    --
+
+    -- v = {
+    --   name = "Vimspector",
+    --   G = { "<cmd>lua require('config.vimspector').generate_debug_profile()<cr>", "Generate Debug Profile" },
+    --   I = { "<cmd>VimspectorInstall<cr>", "Install" },
+    --   U = { "<cmd>VimspectorUpdate<cr>", "Update" },
+    --   R = { "<cmd>call vimspector#RunToCursor()<cr>", "Run to Cursor" },
+    --   c = { "<cmd>call vimspector#Continue()<cr>", "Continue" },
+    --   i = { "<cmd>call vimspector#StepInto()<cr>", "Step Into" },
+    --   o = { "<cmd>call vimspector#StepOver()<cr>", "Step Over" },
+    --   s = { "<cmd>call vimspector#Launch()<cr>", "Start" },
+    --   t = { "<cmd>call vimspector#ToggleBreakpoint()<cr>", "Toggle Breakpoint" },
+    --   u = { "<cmd>call vimspector#StepOut()<cr>", "Step Out" },
+    --   S = { "<cmd>call vimspector#Stop()<cr>", "Stop" },
+    --   r = { "<cmd>call vimspector#Restart()<cr>", "Restart" },
+    --   x = { "<cmd>VimspectorReset<cr>", "Reset" },
+    --   H = { "<cmd>lua require('config.vimspector').toggle_human_mode()<cr>", "Toggle HUMAN mode" },
+    -- },
+
     t = {
       name = "Test",
       S = { "<cmd>UltestSummary<cr>", "Summary" },
@@ -102,24 +114,6 @@ local function normal_keymap()
       i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], "Inline Variable" },
       p = { [[ <Esc><Cmd>lua require('refactoring').debug.printf({below = false})<CR>]], "Debug Print" },
       c = { [[ <Esc><Cmd>lua require('refactoring').debug.cleanup({below = false})<CR>]], "Debug Cleanup" },
-    },
-
-    v = {
-      name = "Vimspector",
-      G = { "<cmd>lua require('config.vimspector').generate_debug_profile()<cr>", "Generate Debug Profile" },
-      I = { "<cmd>VimspectorInstall<cr>", "Install" },
-      U = { "<cmd>VimspectorUpdate<cr>", "Update" },
-      R = { "<cmd>call vimspector#RunToCursor()<cr>", "Run to Cursor" },
-      c = { "<cmd>call vimspector#Continue()<cr>", "Continue" },
-      i = { "<cmd>call vimspector#StepInto()<cr>", "Step Into" },
-      o = { "<cmd>call vimspector#StepOver()<cr>", "Step Over" },
-      s = { "<cmd>call vimspector#Launch()<cr>", "Start" },
-      t = { "<cmd>call vimspector#ToggleBreakpoint()<cr>", "Toggle Breakpoint" },
-      u = { "<cmd>call vimspector#StepOut()<cr>", "Step Out" },
-      S = { "<cmd>call vimspector#Stop()<cr>", "Stop" },
-      r = { "<cmd>call vimspector#Restart()<cr>", "Restart" },
-      x = { "<cmd>VimspectorReset<cr>", "Reset" },
-      H = { "<cmd>lua require('config.vimspector').toggle_human_mode()<cr>", "Toggle HUMAN mode" },
     },
 
     z = {
@@ -236,6 +230,7 @@ local function code_keymap()
       keymap_c.s = { "<cmd>2TermExec cmd='yarn start'<cr>", "Yarn Start" }
       keymap_c.t = { "<cmd>2TermExec cmd='yarn test'<cr>", "Yarn Test" }
     end
+
 
     if next(keymap_c) ~= nil then
       whichkey.register(

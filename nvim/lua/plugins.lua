@@ -79,20 +79,30 @@ function M.setup()
 		}
 
     -- absolute and relative line numbering
-    use { "sitiom/nvim-numbertoggle" } 
+    use { "sitiom/nvim-numbertoggle" }
+
+    -- vimspector
+    use {
+      "puremourning/vimspector",
+      cmd = { "VimspectorInstall", "VimspectorUpdate" },
+      fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
+      config = function()
+        require("config.vimspector").setup()
+      end,
+    }
 
     -- Vimtex for latex documents
     use {'lervag/vimtex'}
 
-    -- fuzzy search the citation file
-    use { "nvim-telescope/telescope-bibtex.nvim",
-      requires = {
-        {'nvim-telescope/telescope.nvim'},
-      },
-      config = function ()
-        require"telescope".load_extension("bibtex")
-      end,
-    }
+    -- -- fuzzy search the citation file
+    -- use { "nvim-telescope/telescope-bibtex.nvim",
+    -- requires = {
+    --   {'nvim-telescope/telescope.nvim'},
+    --   },
+    --   config = function ()
+    --     require"telescope".load_extension("bibtex")
+    --   end,
+    -- }
 
 		-- Better Comment
 		use {
@@ -134,7 +144,7 @@ function M.setup()
       end,
     }
 
-    -- fuzzy file search 
+    -- fuzzy file search
     use { "junegunn/fzf", run = "./install --all" }
     use { "junegunn/fzf.vim" }
     use {
@@ -189,9 +199,6 @@ function M.setup()
     use({"iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-
-    -- VIMSPECTOR debugger
-    use { 'puremourning/vimspector' }
 
     -- ChatGPT
     -- use({
