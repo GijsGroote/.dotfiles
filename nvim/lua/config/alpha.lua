@@ -10,10 +10,10 @@ function M.setup()
 
   dashboard.section.header.val = require("config.ancii.ancii").get_random_ancii_art()
   dashboard.section.buttons.val = {
-    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
-    dashboard.button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc<CR>"),
-    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+    dashboard.button("e", "  New file", "<Cmd>ene <BAR> startinsert <CR>"),
+    dashboard.button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins.lua <CR>"),
+    dashboard.button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc <CR>"),
+    dashboard.button("q", "  Quit Neovim", "<Cmd>qa <CR>"),
   }
 
   local function footer()
