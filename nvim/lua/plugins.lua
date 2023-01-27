@@ -84,8 +84,6 @@ function M.setup()
     -- vimspector
     use {
       "puremourning/vimspector",
-      cmd = { "VimspectorInstall", "VimspectorUpdate" },
-      fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
       config = function()
         require("config.vimspector").setup()
       end,
@@ -94,15 +92,15 @@ function M.setup()
     -- Vimtex for latex documents
     use {'lervag/vimtex'}
 
-    -- -- fuzzy search the citation file
-    -- use { "nvim-telescope/telescope-bibtex.nvim",
-    -- requires = {
-    --   {'nvim-telescope/telescope.nvim'},
-    --   },
-    --   config = function ()
-    --     require"telescope".load_extension("bibtex")
-    --   end,
-    -- }
+    -- fuzzy search the citation file
+    use { "nvim-telescope/telescope-bibtex.nvim",
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+      },
+      config = function ()
+        require"telescope".load_extension("bibtex")
+      end,
+    }
 
 		-- Better Comment
 		use {
