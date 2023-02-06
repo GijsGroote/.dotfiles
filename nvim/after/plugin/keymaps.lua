@@ -1,9 +1,7 @@
 local keymap = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 
--- temp custom keymap
-keymap("n", "<leader>tt", ":%s/obstacles/objects/ge<CR> <Bar> :%s/obstacle/object/ge<CR> <Bar> :%s/Obstacles/Objects/ge<CR> <bar> :%s/Obstacle/Object/ge<CR>", {})
-
+-- TODO: create this stuff in which key thingy. 
 -- toggle nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", default_opts)
 
@@ -22,7 +20,7 @@ keymap("n", "<leader>3", '<Cmd>lua require("harpoon.ui").nav_file(3)<CR>', defau
 keymap("n", "<leader>4", '<Cmd>lua require("harpoon.ui").nav_file(4)<CR>', default_opts)
 
 -- quit every window without saving
-keymap("n", "<leader>Q", "<Cmd>qall<CR>", default_opts)
+-- keymap("n", "<leader>Q", "<Cmd>qall<CR>", default_opts)
 
 -- highlight color difinition with that color
 keymap("n", "<leader>c", '<Cmd>ColorHighlight<CR>', default_opts)
@@ -40,14 +38,6 @@ keymap("n", "<leader>n", "i<CR><C-c>k$", default_opts)
 -- JSON formatter
 keymap("n", "<leader>j", "<Cmd>%!jq .<CR>$", default_opts)
 
--- copy to system clipboard
-keymap("v", "<leader>y", '"+y', default_opts)
-
-keymap("v", "<leader>p", '"+p', default_opts)
-keymap("n", "<leader>p", '"+p', default_opts)
-
-keymap("v", "<leader>p", '"+P', default_opts)
-keymap("n", "<leader>p", '"+P', default_opts)
 
 -- turn on true zen mode
 keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", default_opts)
@@ -61,3 +51,4 @@ keymap("n", "<leader>rw", "<Cmd>%s/\\s\\+$//e<CR>", default_opts)
 
 -- popup fuzzy bibtex citation finder
 keymap("n", "<leader>ci", "<Cmd>Telescope bibtex<CR>", default_opts)
+

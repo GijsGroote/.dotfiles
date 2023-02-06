@@ -2,6 +2,10 @@ local M = {}
 
 local utils = require "utils"
 
+-- custom sized for windows
+vim.g.vimspector_bottombar_height=10
+vim.g.vimspector_sidebar_width=50
+
 local vimspector_python = [[
 {
   "configurations": {
@@ -26,6 +30,7 @@ local function debuggers()
   vim.g.vimspector_install_gadgets = {
     "debugpy", -- Python
   }
+
 end
 
 --- Generate debug profile. Currently for Python only

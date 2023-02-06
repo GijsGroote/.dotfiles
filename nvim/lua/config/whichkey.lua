@@ -32,14 +32,27 @@ local v_opts = {
 local function normal_keymap()
   local keymap_p = nil -- Project search
 
-  local f = {
-	  name = "Find",
-    f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
-    b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
-    o = { "<cmd>FzfLua oldfiles<cr>", "Old Files" },
-    g = { "<cmd>FzfLua live_grep<cr>", "Live Grep" },
-    c = { "<cmd>FzfLua commands<cr>", "Commands" },
+  local copy_past_mappings = {
+    -- yank (copy) and  paste from/to system clipboard
+    -- TODO: the visual mode versions
+    y = { [[ "+y ]], "Yank to System Clipboard" },
+    p = { [[ "+p ]], "Past from  System Clipboard" },
+    P = { [[ "+P ]], "Past from  System Clipboard (before cursor)" },
   }
+  whichkey.register(copy_past_mappings, v_opts)
+  whichkey.register(copy_past_mappings, opts)
+
+  local close_tab = {
+    c = {
+      name = "close",
+      t = { [[ <Cmd> tabclose <CR> ]], "Close Tab" },
+      a = { [[ <Cmd> qall <CR> ]], "Close All without saving" },
+      x = { [[ <Cmd> xa <CR> ]], "Close and Save All" },
+      -- todo: what to close next?
+    }
+  }
+  
+  whichkey.register(close_tab, opts)
 
   local keymap = {
     ["w"] = { "<cmd>update!<CR>", "Save" },
@@ -64,8 +77,6 @@ local function normal_keymap()
       H = { "<cmd>lua require('config.vimspector').toggle_human_mode()<cr>", "Toggle HUMAN mode" },
     },
 
-
-
     b = {
       name = "Buffer",
       c = { "<Cmd>BDelete this<Cr>", "Close Buffer" },
@@ -88,13 +99,6 @@ local function normal_keymap()
     },
 
     p = keymap_p,
-
-    j = {
-      name = "Jump",
-      a = { "<Cmd>lua require('harpoon.mark').add_file()<Cr>", "Add File" },
-      m = { "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<Cr>", "UI Menu" },
-      c = { "<Cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<Cr>", "Command Menu" },
-    },
 
     t = {
       name = "Test",
@@ -132,28 +136,13 @@ local function normal_keymap()
       W = { "<cmd>SaveSession<cr>", "Save Workspace" },
       w = { "<cmd>Telescope session-lens search_session<cr>", "Restore Workspace" },
     },
- 
-    g = {
-      name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
-      y = {
-        "<cmd>lua require'gitlinker'.get_buf_range_url('n', {action_callback = require'gitlinker.actions'.open_in_browser})<cr>",
-        "Link",
-      },
-    },
+
   }
   whichkey.register(keymap, opts)
 end
 
 local function visual_keymap()
   local keymap = {
-    g = {
-      name = "Git",
-      y = {
-        "<cmd>lua require'gitlinker'.get_buf_range_url('v', {action_callback = require'gitlinker.actions'.open_in_browser})<cr>",
-        "Link",
-      },
-    },
 
     r = {
       name = "Refactor",
