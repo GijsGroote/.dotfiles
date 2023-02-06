@@ -198,6 +198,10 @@ function M.setup()
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    -- checkhealth told me to do this, so yeah
+    use {("BurntSushi/ripgrep")}
+    use {("sharkdp/fd")}
+
     -- ChatGPT
     -- use({
     --   "jackMort/ChatGPT.nvim",
