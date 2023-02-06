@@ -12,7 +12,6 @@ local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 return {
 
-
   -- Can be delted when you are burger
   s({trig="hgraph"},{t("\\ac{hgraph}")}),
   s({trig="kgraph"},{t("\\ac{kgraph}"),}),
@@ -47,7 +46,7 @@ return {
 
   s({trig="todo", dscr="Expands 'todo' into '\todo[inline]{}'"},
   {
-    t("\\todo[inline]{"),
+    t("\\todo[inline]{Corrado:"),
     i(1),
     t("}")
   }
@@ -101,7 +100,7 @@ t({"\\begin{figure}[H]",
 "    \\caption{}%",
 "    \\label{subfig:}",
 "    \\end{subfigure}",
-"    \hfill",
+"    \\hfill",
 "",
 "    \\begin{subfigure}{.49\\textwidth}",
 "    \\centering",

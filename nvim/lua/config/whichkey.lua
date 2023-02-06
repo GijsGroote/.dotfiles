@@ -29,36 +29,78 @@ local v_opts = {
   nowait = false, -- use `nowait` when creating keymaps
 }
 
-local function normal_keymap()
-  local keymap_p = nil -- Project search
 
-  local copy_past_mappings = {
+local function normal_keymap()
+
+  local n_keymap = {
+
+    -- Turn camelCase into snake_case
+    sc = { [[ <Cmd>lua require("config.custom_keymaps").snake_case()<CR> ]], "snake_case" },
+
+    -- newline without going into inseart mode
+    m = { [[ o<C-c> ]], "newline" },
+
+    -- split current line to this line (left from cursor) and next line (right from cursor)
+    n = { [[ i<CR><C-c>k$ ]], "break line" },
+
+    -- JSON formatter
+    j = { [[ <Cmd>%!jq .<CR>$ ]], "JSON formatter" },
+
+    -- true zen mode
+    t = {
+      name = "zen mode",
+      m = {[[ <Cmd>TZMinimalist<CR> ]], "minimilist"},
+      a = {[[ <Cmd>TZAtaraxis<CR> ]], "ataraxis"},
+    },
+
+    -- Markdown preview
+    md = { [[ <Cmd>MarkdownPreview<CR> ]], "Markdown preview" },
+
+    -- TODO: put this in .tex files only
+    -- popup fuzzy bibtex citation finder
+    ci = {[[ <Cmd>Telescope bibtex<CR> ]], "fuzzy citation finder"},
+
+    -- fuzzy finder
+    f = { [[ <Cmd>Files<CR> ]], "Fuzzy finder" },
+
+    -- remove all trailing white space in file
+    rw = { [[ <Cmd>%s/\\s\\+$//e<CR> ]], "remove trailing whitespace" },
+
+    -- toggle nvim-tree
+    e = {[[ <Cmd>NvimTreeToggle<CR> ]], "toggle NvimTree"},
+
+    -- highlight color difinition with that color
+    co = { [[ <Cmd>ColorHighlight<CR> ]], "highlight color" },
+    -- TODO: turn of color highlighting if they are turned on
+
+    -- harpoon to navigate between multiple scripts 
+    h = { [[<Cmd>lua require("harpoon.mark").add_file()<CR><Cmd>lua print("file harpooned!")<CR>]], "harpoon file"},
+    H = { [[ <Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR> ]], "Show harponed files"},
+    ["1"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(1)<CR> ]], "goto file 1"},
+    ["2"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(2)<CR> ]], "goto file 2"},
+    ["3"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(3)<CR> ]], "goto file 3"},
+    ["4"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(4)<CR> ]], "goto file 4"},
+
     -- yank (copy) and  paste from/to system clipboard
-    -- TODO: the visual mode versions
     y = { [[ "+y ]], "Yank to System Clipboard" },
     p = { [[ "+p ]], "Past from  System Clipboard" },
     P = { [[ "+P ]], "Past from  System Clipboard (before cursor)" },
-  }
-  whichkey.register(copy_past_mappings, v_opts)
-  whichkey.register(copy_past_mappings, opts)
 
-  local close_tab = {
+  -- quit every window without saving
+    Q = {[[ <Cmd>qall<CR> ]], "close without saving"},
+
     c = {
       name = "close",
       t = { [[ <Cmd> tabclose <CR> ]], "Close Tab" },
       a = { [[ <Cmd> qall <CR> ]], "Close All without saving" },
       x = { [[ <Cmd> xa <CR> ]], "Close and Save All" },
       -- todo: what to close next?
-    }
-  }
-  
-  whichkey.register(close_tab, opts)
+    },
 
-  local keymap = {
+
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
     -- ["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" },
-    --
     v = {
       name = "Vimspector",
       G = { "<cmd>lua require('config.vimspector').generate_debug_profile()<cr>", "Generate Debug Profile" },
@@ -84,37 +126,6 @@ local function normal_keymap()
       D = { "<Cmd>BWipeout other<Cr>", "Delete All Buffers" },
     },
 
-    c = {
-      name = "Code",
-      g = { "<cmd>Neogen func<Cr>", "Func Doc" },
-      G = { "<cmd>Neogen class<Cr>", "Class Doc" },
-      x = "Swap Next Param",
-      X = "Swap Prev Param",
-      -- f = "Select Outer Function",
-      -- F = "Select Outer Class",
-    },
-
-    d = {
-      name = "Debug",
-    },
-
-    p = keymap_p,
-
-    t = {
-      name = "Test",
-      S = { "<cmd>UltestSummary<cr>", "Summary" },
-      a = { "<cmd>Ultest<cr>", "All" },
-      c = { "<cmd>UltestClear<cr>", "Clear" },
-      d = { "<cmd>UltestDebug<cr>", "Debug" },
-      f = { "<cmd>TestFile<cr>", "File" },
-      l = { "<cmd>TestLast<cr>", "Last" },
-      n = { "<cmd>TestNearest<cr>", "Nearest" },
-      o = { "<cmd>UltestOutput<cr>", "Output" },
-      s = { "<cmd>TestSuite<cr>", "Suite" },
-      v = { "<cmd>TestVisit<cr>", "Visit" },
-      p = { "<Plug>PlenaryTestFile", "PlenaryTestFile" },
-    },
-
     r = {
       name = "Refactor",
       i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], "Inline Variable" },
@@ -131,18 +142,19 @@ local function normal_keymap()
       S = { "<cmd>PackerStatus<cr>", "Status" },
       u = { "<cmd>PackerUpdate<cr>", "Update" },
       x = { "<cmd>cd %:p:h<cr>", "Change Directory" },
-      -- x = { "<cmd>set autochdir<cr>", "Auto ChDir" },
-      e = { "!!$SHELL<CR>", "Execute line" },
-      W = { "<cmd>SaveSession<cr>", "Save Workspace" },
-      w = { "<cmd>Telescope session-lens search_session<cr>", "Restore Workspace" },
     },
 
   }
-  whichkey.register(keymap, opts)
+  whichkey.register(n_keymap, opts)
 end
 
 local function visual_keymap()
-  local keymap = {
+  local v_keymap = {
+
+    zn = { [[ :'<,'>TZNarrow<CR> ]], "highlight section only" },
+
+
+    y = { [[ "+y ]], "Yank to System Clipboard" },
 
     r = {
       name = "Refactor",
@@ -156,27 +168,9 @@ local function visual_keymap()
       r = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
       V = { [[ <Esc><Cmd>lua require('refactoring').debug.print_var({})<CR>]], "Debug Print Var" },
     },
-
-    v = {
-      name = "Vimspector",
-      G = { "<cmd>lua require('config.vimspector').generate_debug_profile()<cr>", "Generate Debug Profile" },
-      I = { "<cmd>VimspectorInstall<cr>", "Install" },
-      U = { "<cmd>VimspectorUpdate<cr>", "Update" },
-      R = { "<cmd>call vimspector#RunToCursor()<cr>", "Run to Cursor" },
-      c = { "<cmd>call vimspector#Continue()<cr>", "Continue" },
-      i = { "<cmd>call vimspector#StepInto()<cr>", "Step Into" },
-      o = { "<cmd>call vimspector#StepOver()<cr>", "Step Over" },
-      s = { "<cmd>call vimspector#Launch()<cr>", "Start" },
-      t = { "<cmd>call vimspector#ToggleBreakpoint()<cr>", "Toggle Breakpoint" },
-      u = { "<cmd>call vimspector#StepOut()<cr>", "Step Out" },
-      S = { "<cmd>call vimspector#Stop()<cr>", "Stop" },
-      r = { "<cmd>call vimspector#Restart()<cr>", "Restart" },
-      x = { "<cmd>VimspectorReset<cr>", "Reset" },
-      H = { "<cmd>lua require('config.vimspector').toggle_human_mode()<cr>", "Toggle HUMAN mode" },
-    },
   }
 
-  whichkey.register(keymap, v_opts)
+  whichkey.register(v_keymap, v_opts)
 end
 
 local function code_keymap()
@@ -243,8 +237,8 @@ local function code_keymap()
 
     if next(keymap_c) ~= nil then
       whichkey.register(
-        { c = keymap_c },
-        { mode = "n", silent = true, noremap = true, buffer = bufnr, prefix = "<leader>" }
+      { c = keymap_c },
+      { mode = "n", silent = true, noremap = true, buffer = bufnr, prefix = "<leader>" }
       )
     end
   end

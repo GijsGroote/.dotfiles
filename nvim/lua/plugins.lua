@@ -199,8 +199,8 @@ function M.setup()
     })
 
     -- checkhealth told me to do this, so yeah
-    use {("BurntSushi/ripgrep")}
-    use {("sharkdp/fd")}
+    -- use {("BurntSushi/ripgrep")}
+    -- use {("sharkdp/fd")}
 
     -- ChatGPT
     -- use({
