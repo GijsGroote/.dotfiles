@@ -38,7 +38,7 @@ local function normal_keymap()
     sc = { [[ <Cmd>lua require("config.custom_keymaps").snake_case()<CR> ]], "snake_case" },
 
     -- newline without going into inseart mode
-    m = { [[ o<C-c> ]], "newline" },
+    -- m = { [[ o<C-c> ]], "newline" },
 
     -- split current line to this line (left from cursor) and next line (right from cursor)
     n = { [[ i<CR><C-c>k$ ]], "break line" },
@@ -64,6 +64,7 @@ local function normal_keymap()
     f = { [[ <Cmd>Files<CR> ]], "Fuzzy finder" },
 
     -- remove all trailing white space in file
+    -- TODO I think this does not work any more somehow
     rw = { [[ <Cmd>%s/\\s\\+$//e<CR> ]], "remove trailing whitespace" },
 
     -- toggle nvim-tree
@@ -151,8 +152,12 @@ end
 local function visual_keymap()
   local v_keymap = {
 
-    zn = { [[ :'<,'>TZNarrow<CR> ]], "highlight section only" },
-
+    t = {
+      name = "zen mode",
+      m = {[[ <Cmd>TZMinimalist<CR> ]], "minimilist"},
+      a = {[[ <Cmd>TZAtaraxis<CR> ]], "ataraxis"},
+      n = { [[ :'<,'>TZNarrow<CR> ]], "highlight section only" },
+    },
 
     y = { [[ "+y ]], "Yank to System Clipboard" },
 
