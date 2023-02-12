@@ -52,10 +52,13 @@ local function normal_keymap()
 
     -- TODO: put this in .tex files only
     -- popup fuzzy bibtex citation finder
-    ci = {[[ <Cmd>Telescope bibtex<CR> ]], "fuzzy citation finder"},
+    ci = {[[ <Cmd>Telescope bibtex<CR> ]], "Fuzzy citation finder"},
 
     -- fuzzy finder
-    f = { [[ <Cmd>Files<CR> ]], "Fuzzy finder" },
+    f = { [[ <Cmd>Files<CR> ]], "Fuzzy Finder" },
+
+    -- popup lazygit
+    lg = { [[ <Cmd>LazyGit<CR> ]], "Lazy Git" },
 
     -- toggle nvim-tree
     e = {[[ <Cmd>NvimTreeToggle<CR> ]], "toggle NvimTree"},

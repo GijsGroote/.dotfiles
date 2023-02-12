@@ -133,15 +133,6 @@ function M.setup()
 			tag = "nightly" -- optional, updated every week. (see issue #1193)
 		}
 
-		-- Whichkey
-		use {
-			"folke/which-key.nvim",
-			event = "BufEnter",
-			config = function()
-				require("config.whichkey").setup()
-      end,
-    }
-
     -- fuzzy file search
     use { "junegunn/fzf", run = "./install --all" }
     use { "junegunn/fzf.vim" }
@@ -198,7 +189,6 @@ function M.setup()
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-
    -- Git intergration
    use ({'kdheepak/lazygit.nvim'})
 
@@ -221,13 +211,22 @@ function M.setup()
    --      "nvim-telescope/telescope.nvim"
    --    }
    --  })
+   --
+   -- Whichkey
+   use {
+     "folke/which-key.nvim",
+     event = "BufEnter",
+     config = function()
+       require("config.whichkey").setup()
+     end,
+   }
 
-  end
-  packer_init()
-  local packer = require "packer"
+ end
+ packer_init()
+ local packer = require "packer"
 
-  packer.init(conf)
-  packer.startup(plugins)
+ packer.init(conf)
+ packer.startup(plugins)
 end
 
 return M
