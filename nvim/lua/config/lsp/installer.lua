@@ -12,7 +12,7 @@ function M.setup(servers, options)
 
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
 
-        if server.name == 'sumneko_lua' then
+        if server.name == 'lua_ls' then
           opts.settings = {
             Lua = {
               diagnostics = { globals = {  'vim' }

@@ -198,24 +198,29 @@ function M.setup()
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-    -- checkhealth told me to do this, so yeah
-    -- use {("BurntSushi/ripgrep")}
-    -- use {("sharkdp/fd")}
 
-    -- ChatGPT
-    -- use({
-    --   "jackMort/ChatGPT.nvim",
-    --   config = function()
-    --     require("chatgpt").setup({
-    --       -- optional configuration
-    --     })
-    --   end,
-    --   requires = {
-    --     "MunifTanjim/nui.nvim",
-    --     "nvim-lua/plenary.nvim",
-    --     "nvim-telescope/telescope.nvim"
-    --   }
-    -- })
+   -- Git intergration
+   use ({'kdheepak/lazygit.nvim'})
+
+   use({
+      'terror/chatgpt.nvim',
+      run = 'pip3 install -r requirements.txt'
+    })
+
+   --  -- ChatGPT
+   -- use({
+   --    "jackMort/ChatGPT.nvim",
+   --    config = function()
+   --      require("chatgpt").setup({
+   --        -- optional configuration
+   --      })
+   --    end,
+   --    requires = {
+   --      "MunifTanjim/nui.nvim",
+   --      "nvim-lua/plenary.nvim",
+   --      "nvim-telescope/telescope.nvim"
+   --    }
+   --  })
 
   end
   packer_init()

@@ -37,12 +37,6 @@ local function normal_keymap()
     -- Turn camelCase into snake_case
     sc = { [[ <Cmd>lua require("config.custom_keymaps").snake_case()<CR> ]], "snake_case" },
 
-    -- newline without going into inseart mode
-    -- m = { [[ o<C-c> ]], "newline" },
-
-    -- split current line to this line (left from cursor) and next line (right from cursor)
-    n = { [[ i<CR><C-c>k$ ]], "break line" },
-
     -- JSON formatter
     j = { [[ <Cmd>%!jq .<CR>$ ]], "JSON formatter" },
 
@@ -62,10 +56,6 @@ local function normal_keymap()
 
     -- fuzzy finder
     f = { [[ <Cmd>Files<CR> ]], "Fuzzy finder" },
-
-    -- remove all trailing white space in file
-    -- TODO I think this does not work any more somehow
-    rw = { [[ <Cmd>%s/\\s\\+$//e<CR> ]], "remove trailing whitespace" },
 
     -- toggle nvim-tree
     e = {[[ <Cmd>NvimTreeToggle<CR> ]], "toggle NvimTree"},

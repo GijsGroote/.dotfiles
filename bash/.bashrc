@@ -133,6 +133,8 @@ alias icat="kitty +kitten icat"
 alias p3='python3' 
 alias p2='python2' 
 
+# add secrets
+source "/home/gijs/.ssh/secrets"
 
 # add latex directory to path
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
