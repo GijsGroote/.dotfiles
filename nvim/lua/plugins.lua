@@ -143,17 +143,25 @@ function M.setup()
 
     -- LSP
     use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
-      opt = true,
-      event = "BufEnter", -- Prefer BufReadPre.. figure out how to debug
-      wants = { "nvim-lsp-installer" },
-      config = function()
-        require("config.lsp").setup()
-      end,
-      requires = {
-        "williamboman/nvim-lsp-installer",
-      },
     }
+
+    -- use {
+    --   "neovim/nvim-lspconfig",
+    --   opt = true,
+    --   event = "BufEnter", -- Prefer BufReadPre.. figure out how to debug
+    --   wants = { "nvim-lsp-installer" },
+    --   config = function()
+    --     require("config.lsp.mason").setup()
+    --   end,
+    --   requires = {
+    --     "williamboman/mason.nvim",
+    --     "williamboman/mason-lspconfig.nvim",
+    --     -- "williamboman/nvim-lsp-installer",
+    --   },
+    -- }
 
     -- Harpoon
     use {"nvim-lua/plenary.nvim"}

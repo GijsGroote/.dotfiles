@@ -15,6 +15,7 @@ return {
   -- Can be delted when you are burger
   s({trig="hgraph"},{t("\\ac{hgraph}")}),
   s({trig="kgraph"},{t("\\ac{kgraph}"),}),
+
   s({trig="sym", dscr="Expands 'sym' into '\\gls{}'"},
   {
     t("\\gls{"),
@@ -22,7 +23,13 @@ return {
     t("}"),
   }
   ),
-
+  s({trig="ac", dscr="Expands 'ac' into '\\ac{}'"},
+  {
+    t("\\ac{"),
+    i(1),
+    t("}"),
+  }
+  ),
   s(
   {
     trig="ci",
