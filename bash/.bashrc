@@ -142,7 +142,7 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 
 # create vim normal mode on ESC
-# set -o vi
+set -o vi
 
 # change directory
 # cd ~/Documents/semantic-thinking-robot

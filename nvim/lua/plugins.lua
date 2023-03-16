@@ -200,26 +200,21 @@ function M.setup()
    -- Git intergration
    use ({'kdheepak/lazygit.nvim'})
 
+   -- ChatGPT
    use({
-      'terror/chatgpt.nvim',
-      run = 'pip3 install -r requirements.txt'
+      "jackMort/ChatGPT.nvim",
+      config = function()
+        require("chatgpt").setup({
+          -- optional configuration
+        })
+      end,
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
     })
 
-   --  -- ChatGPT
-   -- use({
-   --    "jackMort/ChatGPT.nvim",
-   --    config = function()
-   --      require("chatgpt").setup({
-   --        -- optional configuration
-   --      })
-   --    end,
-   --    requires = {
-   --      "MunifTanjim/nui.nvim",
-   --      "nvim-lua/plenary.nvim",
-   --      "nvim-telescope/telescope.nvim"
-   --    }
-   --  })
-   --
    -- Whichkey
    use {
      "folke/which-key.nvim",
