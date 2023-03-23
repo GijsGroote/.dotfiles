@@ -12,3 +12,6 @@ keymap("n", "m", "o<C-c>", default_opts)
 
 -- split current line to this line (left from cursor) and next line (right from cursor)
 keymap("n", "M", "i<CR><C-c>k$", default_opts)
+
+keymap("n", "<leader>sp", "<Cmd>setlocal spell! spelllang=en_us<CR>", default_opts)
+
