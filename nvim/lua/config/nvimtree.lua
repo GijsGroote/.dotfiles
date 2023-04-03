@@ -7,6 +7,7 @@ function M.setup()
     view = {
       number = true,
       relativenumber = true,
+      side = "right",
     },
     update_cwd = true,
     update_focused_file = {

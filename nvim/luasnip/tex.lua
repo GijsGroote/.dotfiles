@@ -10,6 +10,7 @@ local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
 return {
 
   -- Can be delted when you are burger
@@ -78,7 +79,7 @@ return {
     t({"\\begin{figure}[H]",
     "    \\centering",
     "    \\includegraphics[width=5cm]{figures/}",
-    "    \\caption{}",
+    "    \\caption{}%",
     "    \\label{}",
     "\\end{figure}"
   }),
@@ -135,9 +136,9 @@ t({"\\begin{figure}[H]",
 })
 ),
 
-s({trig="ref", dscr="Expands 'ref' into '\\cref{}'"},
+s({trig="ref", dscr="Expands 'ref' into '\\Cref{}'"},
 {
-  t("\\cref{"),
+  t("\\Cref{"),
   i(1),
   t("}"),
 }
