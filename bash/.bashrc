@@ -145,8 +145,8 @@ export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 set -o vi
 
 # change directory
-cd ~/Documents/semantic-thinking-robot
-poetry shell
-# cd ~/Documents/thesis-report
+# cd ~/Documents/semantic-thinking-robot
+# poetry shell
+cd ~/Documents/thesis/thesis-presentation
 
 clear

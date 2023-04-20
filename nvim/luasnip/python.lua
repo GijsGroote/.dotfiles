@@ -13,4 +13,13 @@ return {
     })
   }),
 
+
+  s({trig="pr", dscr="Expands 'pr' into 'print(f'')'"},
+  {
+    t('print(f"'),
+    i(1),
+    t('")'),
+  }
+  ),
+
 }
