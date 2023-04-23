@@ -66,9 +66,9 @@ return {
   }
   ),
 
-  s({trig="todo", dscr="Expands 'todo' into '\todo[inline]{}'"},
+  s({trig="todo", dscr="Expands 'todo' into '\todo{}'"},
   {
-    t("\\todo[inline]{"),
+    t("\\todo{"),
     i(1),
     t("}")
   }

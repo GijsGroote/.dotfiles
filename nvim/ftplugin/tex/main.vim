@@ -9,8 +9,10 @@ syntax enable
 
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
+
 let g:vimtex_view_method = 'zathura'
-let g:vimtex_view_general_viewer = 'zathura'
+" let g:vimtex_view_zathura_options = '-s'
+" let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_quickfix_open_on_warning = 0  
 let g:vimtex_quickfix_ignore_filters = [
       \ 'Underfull \\hbox',
@@ -26,7 +28,7 @@ let g:vimtex_quickfix_ignore_filters = [
 let s:pdflatex= 'pdflatex --output-directory=%:h/output %'
 
 " latexmk compilation 
-let s:latexmk = 'latexmk -pdf -silent -aux-directory=%:h/output %'
+let s:latexmk = 'latexmk -silent -aux-directory=%:h/output %'
 
 " Then set `makeprg` to the value of `s:latexmk`
 let &l:makeprg = expand(s:latexmk)
