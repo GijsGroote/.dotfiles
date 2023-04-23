@@ -31,3 +31,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # make sure that the DPMS is disabled
 xset s off && xset -dpms
+
+if [ -e /home/gijs/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gijs/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
