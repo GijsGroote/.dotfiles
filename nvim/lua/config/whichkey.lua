@@ -55,7 +55,7 @@ local function normal_keymap()
     ci = {[[ <Cmd>Telescope bibtex<CR> ]], "Fuzzy citation finder"},
 
     -- fuzzy finder
-    f = { [[ <Cmd>Files<CR> ]], "Fuzzy Finder" },
+    -- f = { [[ <Cmd>Files<CR> ]], "Fuzzy Finder" },
 
     -- popup lazygit
     lg = { [[ <Cmd>LazyGit<CR> ]], "Lazy Git" },

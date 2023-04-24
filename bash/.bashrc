@@ -103,15 +103,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # export alias vim to start neo vim 
-NVIM_BEGINNER=~/.config/
-export NVIM_BEGINNER
+# NVIM_BEGINNER=~/.config/
+# export NVIM_BEGINNER
 
 # use -n to ignore swap files. To use swapfiles, use alias nvim 
-alias vim='XDG_DATA_HOME=$NVIM_BEGINNER/share XDG_CONFIG_HOME=$NVIM_BEGINNER nvim -n'
+# alias vim='XDG_DATA_HOME=$NVIM_BEGINNER/share XDG_CONFIG_HOME=$NVIM_BEGINNER nvim -n'
+# TODO set xdg_config_home
 
 # set vim alias as default editor
-export EDITOR=~/dev/nvim/./nvim.sh
-export VISUAL=$EDITOR
+# export EDITOR=~/dev/nvim/./nvim.sh
+# export VISUAL=$EDITOR
 
 
 # TODO: this should be done by install.conf.yaml innit?
@@ -136,6 +137,10 @@ alias p2='python2'
 # add secrets
 source "/home/gijs/.ssh/secrets"
 
+# add neovim to path
+alias vim="nvim"
+alias vi="nvim"
+
 # add latex directory to path
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # add mcrl2 directory to path
@@ -145,8 +150,8 @@ export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 set -o vi
 
 # change directory
-# cd ~/Documents/semantic-thinking-robot
+cd ~/.dotfiles/nvim
 # poetry shell
-cd ~/Documents/thesis/thesis-presentation
+#cd ~/Documents/thesis/thesis-presentation
 
 clear
