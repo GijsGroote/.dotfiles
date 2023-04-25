@@ -11,8 +11,6 @@ local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
-opt.timeoutlen = 300 -- Time [miliseconds] for whichkey to open
-
 -- set current directory for fuzzy search
 opt.path:remove "/usr/include"
 opt.path:append "**"

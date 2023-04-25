@@ -1,13 +1,6 @@
 -- this file contains all the plugins that take just a few lines of code
 return {
 
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
-
   -- Harpoon
   "ThePrimeagen/harpoon",
 
@@ -32,24 +25,14 @@ return {
   -- absolute and relative line numbering
   "sitiom/nvim-numbertoggle",
 
-
   -- Better Comment
-  {
-    "numToStr/Comment.nvim",
-    opt = true,
-    keys = { "gcc", "gbc" },
-    config = function()
-      require("Comment").setup({})
-    end,
-  },
+  "tpope/vim-commentary",
+
 
   -- IndentLine
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufEnter",
-    config = function()
-      require("config.indentblankline").setup()
-    end,
   },
 
 
