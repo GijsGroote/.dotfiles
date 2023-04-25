@@ -1,7 +1,7 @@
 {
   "Colorizer": { "branch": "master", "commit": "715c91303f0f7a59b21af39c9d168d975ca2c831" },
   "Comment.nvim": { "branch": "master", "commit": "a89339ffbee677ab0521a483b6dac7e2e67c907e" },
-  "LazyVim": { "branch": "main", "commit": "5202a0f006b817d79dbfd07d93bd297fca5f48b4" },
+  "LazyVim": { "branch": "main", "commit": "86ac9989ea15b7a69bb2bdf719a9a809db5ce526" },
   "LuaSnip": { "branch": "master", "commit": "e77fa9ad0b1f4fc6cddf54e51047e17e90c7d7ed" },
   "ale": { "branch": "master", "commit": "61248e1453dc6373160154e1f6855ffc510a7dfc" },
   "alpha-nvim": { "branch": "main", "commit": "87c204040e3f5d4c1c95067b35905d8f8a2f2545" },

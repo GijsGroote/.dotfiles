@@ -7,9 +7,26 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+local api = vim.api
+local g = vim.g
+local opt = vim.opt
+
+opt.timeoutlen = 300 -- Time [miliseconds] for whichkey to open
+
+-- set current directory for fuzzy search
+opt.path:remove "/usr/include"
+opt.path:append "**"
+
+-- Indentation
+opt.smartindent = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.number = true
+
 -- leaders
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- setup all plugins in lua/plugins directory
 require("lazy").setup('plugins')

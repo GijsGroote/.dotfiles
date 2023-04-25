@@ -21,9 +21,34 @@ local default_header = {
     },
 }
 
+local stats = require("lazy").stats()
+local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+local pad_footer = string.rep(" ", 8)
+-- TODO: you can create a callback to update the footer when lazy has loaded
+-- see https://www.lazyvim.org/plugins/extras/ui.mini-starter
+
+
+
+local datetime = os.date "%d-%m-%Y %H:%M:%S"
+local plugins_text =
+"  loaded "
+.. stats.count 
+.. " plugins   v" 
+.. vim.version().major
+.. "."
+.. vim.version().minor
+.. "."
+.. vim.version().patch
+.. "   "
+.. datetime
+
+-- Quote
+local fortune = require "alpha.fortune"
+local quote = table.concat(fortune(), "\n")
+
 local footer = {
     type = "text",
-    val = "",
+    val = plugins_text .. "\n" .. quote,
     opts = {
         position = "center",
         hl = "Number",
@@ -65,19 +90,18 @@ local function button(sc, txt, keybind, keybind_opts)
     }
 end
 
-
-
 local buttons = {
     type = "group",
     val = {
+	    -- TODO: find nicer images for find file
         button("e", "  New file", "<Cmd>ene <BAR> startinsert <CR>"),
+        button("f", "  Find file", "<Cmd>Telescope find_files <CR>"),
         button("d", ".  Open Dotfiles", "<Cmd>e ~/.dotfiles/ <CR>"),
-        button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins.lua <CR>"),
+        button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins/plugins.lua <CR>"),
         button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc <CR>"),
         button("q", "  Quit Neovim", "<Cmd>qa <CR>"),
-        button("e", "  New file", "<cmd>ene <CR>"),
-        button("SPC f h", "  Recently opened files"),
-        button("SPC s l", "  Open last session"),
+        button("h", "  Recent files", "<Cmd>Telescope oldfiles <CR>"),
+        button("r", "  Restore last session", "[[lua require('persistence').load()]]"),
     },
     opts = {
         spacing = 1,
@@ -104,30 +128,7 @@ local config = {
     },
 }
 
-  --
-  --     local function footer()
-  --       -- Number of plugins
-  --       local total_plugins = #vim.tbl_keys(packer_plugins)
-  --       local datetime = os.date "%d-%m-%Y %H:%M:%S"
-  --       local plugins_text =
-  --       "   "
-  --       .. total_plugins
-  --       .. " plugins"
-  --       .. "   v"
-  --       .. vim.version().major
-  --       .. "."
-  --       .. vim.version().minor
-  --       .. "."
-  --       .. vim.version().patch
-  --       .. "   "
-  --       .. datetime
-  --
-  --       -- Quote
-  --       local fortune = require "alpha.fortune"
-  --       local quote = table.concat(fortune(), "\n")
-  --
-  --       return plugins_text .. "\n" .. quote
-  --     end
+
   --
   --     dashboard.section.footer.val = footer()
   --
@@ -137,10 +138,6 @@ local config = {
   --     dashboard.section.buttons.opts.hl_shortcut = "Type"
   --     dashboard.opts.opts.noautocmd = true
   --
-  --     alpha.setup(dashboard.opts)
-  --     )
-  --   end
-  -- }
 
 
 

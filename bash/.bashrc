@@ -102,30 +102,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# export alias vim to start neo vim 
-# NVIM_BEGINNER=~/.config/
-# export NVIM_BEGINNER
-
-# use -n to ignore swap files. To use swapfiles, use alias nvim 
-# alias vim='XDG_DATA_HOME=$NVIM_BEGINNER/share XDG_CONFIG_HOME=$NVIM_BEGINNER nvim -n'
-# TODO set xdg_config_home
-
-# set vim alias as default editor
-# export EDITOR=~/dev/nvim/./nvim.sh
-# export VISUAL=$EDITOR
-
-
 # TODO: this should be done by install.conf.yaml innit?
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# fast commit 
-function fc {
-  if [[ $# -eq 0 ]]
-    then git add . && git commit
-  else
-    git add . && git commit -m "$*"
-  fi
-}
 
 # kitty terminator view image
 alias icat="kitty +kitten icat"
@@ -150,8 +128,8 @@ export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 set -o vi
 
 # change directory
-cd ~/.dotfiles/nvim
+# cd ~/.dotfiles/nvim
 # poetry shell
-#cd ~/Documents/thesis/thesis-presentation
+cd ~/Documents/thesis/thesis-report
 
 clear
