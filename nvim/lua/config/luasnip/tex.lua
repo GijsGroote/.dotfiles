@@ -68,7 +68,7 @@ return {
 
   s({trig="todo", dscr="Expands 'todo' into '\todo{}'"},
   {
-    t("\\todo{"),
+    t("\\todo{Martijn: "),
     i(1),
     t("}")
   }

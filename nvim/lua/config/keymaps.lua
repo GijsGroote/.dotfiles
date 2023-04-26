@@ -23,3 +23,5 @@ vim.api.nvim_create_autocmd(
   { pattern = { "help", "startuptime", "qf", "lspinfo" }, command = [[nnoremap <buffer><silent> q :close<CR>]] }
 )
 
+
+

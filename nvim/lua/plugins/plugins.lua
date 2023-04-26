@@ -11,25 +11,13 @@ return {
     },
   },
 
-  -- Harpoon
-  "ThePrimeagen/harpoon",
-
   -- ALE (Asynchronous Lint Engine)
   { "dense-analysis/ale" },
 
-  -- Zen mode
-  {
-    "Pocco81/true-zen.nvim",
-    config = function()
-      require("true-zen").setup({
-        -- your config goes here
-        -- or just leave it empty :)
-      })
-    end,
-  },
-
   -- git intergration
-  "kdheepak/lazygit.nvim",
+  {"kdheepak/lazygit.nvim",
+    keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Lazy Git" } },
+  },
 
   -- absolute and relative line numbering
   "sitiom/nvim-numbertoggle",
@@ -71,4 +59,5 @@ return {
       }
     end,
   },
+
 }

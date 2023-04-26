@@ -49,40 +49,9 @@ return {
           -- JSON formatter
           j = { [[ <Cmd>%!jq .<CR>$ ]], "JSON formatter" },
 
-          -- true zen mode
-          t = {
-            name = "zen mode",
-            m = {[[ <Cmd>TZMinimalist<CR> ]], "minimilist"},
-            a = {[[ <Cmd>TZAtaraxis<CR> ]], "ataraxis"},
-          },
-
-          -- Markdown preview
-          md = { [[ <Cmd>MarkdownPreview<CR> ]], "Markdown preview" },
-
-          -- TODO: put this in .tex files only
-          -- popup fuzzy bibtex citation finder
-          ci = {[[ <Cmd>Telescope bibtex<CR> ]], "Fuzzy citation finder"},
-
-          -- fuzzy finder
-          -- f = { [[ <Cmd>Files<CR> ]], "Fuzzy Finder" },
-
-          -- popup lazygit
-          lg = { [[ <Cmd>LazyGit<CR> ]], "Lazy Git" },
-
-          -- toggle nvim-tree
-          e = {[[ <Cmd>NvimTreeToggle<CR> ]], "toggle NvimTree"},
-
           -- highlight color difinition with that color
           co = { [[ <Cmd>ColorHighlight<CR> ]], "highlight color" },
           -- TODO: turn of color highlighting if they are turned on
-
-          -- harpoon to navigate between multiple scripts 
-          h = { [[<Cmd>lua require("harpoon.mark").add_file()<CR><Cmd>lua print("file harpooned!")<CR>]], "harpoon file"},
-          H = { [[ <Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR> ]], "Show harponed files"},
-          ["1"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(1)<CR> ]], "goto file 1"},
-          ["2"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(2)<CR> ]], "goto file 2"},
-          ["3"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(3)<CR> ]], "goto file 3"},
-          ["4"] = { [[ <Cmd>lua require("harpoon.ui").nav_file(4)<CR> ]], "goto file 4"},
 
           -- yank (copy) and  paste from/to system clipboard
           y = { [[ "+y ]], "Yank to System Clipboard" },
@@ -92,59 +61,11 @@ return {
           -- quit every window without saving
           Q = {[[ <Cmd>qall<CR> ]], "close without saving"},
 
-          c = {
-            name = "close",
-            t = { [[ <Cmd> tabclose <CR> ]], "Close Tab" },
-            a = { [[ <Cmd> qall <CR> ]], "Close All without saving" },
-            x = { [[ <Cmd> xa <CR> ]], "Close and Save All" },
-            -- todo: what to close next?
-          },
-
-
-          ["w"] = { "<cmd>update!<CR>", "Save" },
-          ["q"] = { "<cmd>q!<CR>", "Quit" },
-          -- ["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" },
-          v = {
-            name = "Vimspector",
-            G = { "<cmd>lua require('config.vimspector').generate_debug_profile()<cr>", "Generate Debug Profile" },
-            I = { "<cmd>VimspectorInstall<cr>", "Install" },
-            U = { "<cmd>VimspectorUpdate<cr>", "Update" },
-            R = { "<cmd>call vimspector#RunToCursor()<cr>", "Run to Cursor" },
-            c = { "<cmd>call vimspector#Continue()<cr>", "Continue" },
-            i = { "<cmd>call vimspector#StepInto()<cr>", "Step Into" },
-            o = { "<cmd>call vimspector#StepOver()<cr>", "Step Over" },
-            s = { "<cmd>call vimspector#Launch()<cr>", "Start" },
-            t = { "<cmd>call vimspector#ToggleBreakpoint()<cr>", "Toggle Breakpoint" },
-            u = { "<cmd>call vimspector#StepOut()<cr>", "Step Out" },
-            S = { "<cmd>call vimspector#Stop()<cr>", "Stop" },
-            r = { "<cmd>call vimspector#Restart()<cr>", "Restart" },
-            x = { "<cmd>VimspectorReset<cr>", "Reset" },
-            H = { "<cmd>lua require('config.vimspector').toggle_human_mode()<cr>", "Toggle HUMAN mode" },
-          },
-
           b = {
             name = "Buffer",
             c = { "<Cmd>BDelete this<Cr>", "Close Buffer" },
             f = { "<Cmd>BDelete! this<Cr>", "Force Close Buffer" },
             D = { "<Cmd>BWipeout other<Cr>", "Delete All Buffers" },
-          },
-
-          r = {
-            name = "Refactor",
-            i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], "Inline Variable" },
-            p = { [[ <Esc><Cmd>lua require('refactoring').debug.printf({below = false})<CR>]], "Debug Print" },
-            c = { [[ <Esc><Cmd>lua require('refactoring').debug.cleanup({below = false})<CR>]], "Debug Cleanup" },
-          },
-
-          z = {
-            name = "System",
-            c = { "<cmd>PackerCompile<cr>", "Compile" },
-            i = { "<cmd>PackerInstall<cr>", "Install" },
-            p = { "<cmd>PackerProfile<cr>", "Profile" },
-            s = { "<cmd>PackerSync<cr>", "Sync" },
-            S = { "<cmd>PackerStatus<cr>", "Status" },
-            u = { "<cmd>PackerUpdate<cr>", "Update" },
-            x = { "<cmd>cd %:p:h<cr>", "Change Directory" },
           },
 
         }
@@ -153,28 +74,8 @@ return {
 
       local function visual_keymap()
         local v_keymap = {
-
-          t = {
-            name = "zen mode",
-            m = {[[ <Cmd>TZMinimalist<CR> ]], "minimilist"},
-            a = {[[ <Cmd>TZAtaraxis<CR> ]], "ataraxis"},
-            n = { [[ :'<,'>TZNarrow<CR> ]], "highlight section only" },
-          },
-
           y = { [[ "+y ]], "Yank to System Clipboard" },
 
-          r = {
-            name = "Refactor",
-            e = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], "Extract Function" },
-            f = {
-              [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function to File')<CR>]],
-              "Extract Function to File",
-            },
-            v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], "Extract Variable" },
-            i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], "Inline Variable" },
-            r = { [[ <Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>]], "Refactor" },
-            V = { [[ <Esc><Cmd>lua require('refactoring').debug.print_var({})<CR>]], "Debug Print Var" },
-          },
         }
 
         whichkey.register(v_keymap, v_opts)
@@ -192,6 +93,7 @@ return {
           vim.cmd "autocmd FileType * lua CodeRunner()"
         end
 
+        --TODO: what does this do?
         function CodeRunner()
           local bufnr = vim.api.nvim_get_current_buf()
           local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")

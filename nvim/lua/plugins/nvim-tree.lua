@@ -4,6 +4,12 @@ return {
     dependencies = {
       "kyazdani42/nvim-web-devicons", -- optional, for file icons
     },
+    keys = {
+      { "<leader>e", " <Cmd>NvimTreeToggle<CR>", desc = "Open Explorer"},
+    },
+          -- toggle nvim-tree
+          e = {[[ <Cmd>NvimTreeToggle<CR> ]], "toggle NvimTree"},
+
     config = function()
 
   require("nvim-tree").setup {
