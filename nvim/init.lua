@@ -22,6 +22,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.number = true
 
+
 -- leaders
 g.mapleader = " "
 g.maplocalleader = " "
