@@ -11,6 +11,8 @@ local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
+
+
 -- set current directory for fuzzy search
 opt.path:remove "/usr/include"
 opt.path:append "**"
@@ -26,6 +28,11 @@ opt.number = true
 -- leaders
 g.mapleader = " "
 g.maplocalleader = " "
+
+-- set python and ignore proders
+-- g.python3_host_prog = "/usr/local/bin/python3"
+-- g.loaded_perl_provider = 0
+-- g.loaded_python3_provider = 0
 
 -- setup all plugins in lua/plugins directory
 require("lazy").setup('plugins')

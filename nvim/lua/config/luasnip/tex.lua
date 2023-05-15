@@ -13,9 +13,11 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
 
-  -- Can be delted when you are burger
-  s({trig="hgraph"},{t("\\ac{hgraph}")}),
-  s({trig="kgraph"},{t("\\ac{kgraph}"),}),
+  s({trig="sota"},
+  {
+    t("state-of-the-art"),
+  }
+  ),
 
   s({trig="sym", dscr="Expands 'sym' into '\\gls{}'"},
   {
@@ -29,6 +31,7 @@ return {
     t("\\ac{"),
     i(1),
     t("}"),
+    i(2),
   }
   ),
   s(
@@ -68,7 +71,7 @@ return {
 
   s({trig="todo", dscr="Expands 'todo' into '\todo{}'"},
   {
-    t("\\todo{Martijn: "),
+    t("\\todo{"),
     i(1),
     t("}")
   }
@@ -135,6 +138,22 @@ t({"\\begin{figure}[H]",
 "\\end{figure}"
 })
 ),
+
+s({trig="table", dscr="Expands 'table' into a table environment"},
+t({"\\begin{table}[H]",
+"    \\centering",
+"    \\begin{tabular}%",
+"    {>{\\raggedright\\arraybackslash}p{0.25\\textwidth}%",
+"    >{\\raggedright\\arraybackslash}p{0.65\\textwidth}}",
+"      some & thing \\\\",
+"    \\end{tabular}",
+"    \\caption{}%",
+"    \\label{}",
+"\\end{table}",
+})
+),
+
+
 
 s({trig="ref", dscr="Expands 'ref' into '\\Cref{}'"},
 {

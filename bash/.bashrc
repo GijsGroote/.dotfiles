@@ -124,11 +124,15 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # add mcrl2 directory to path
 export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 
+# add poetry
+export PATH="/home/gijs/.local/bin:$PATH"
+
 # create vim normal mode on ESC
 set -o vi
 
 # change directory
 # cd ~/.dotfiles/nvim
+# cd ~/Documents/semantic-thinking-robot
 # poetry shell
 cd ~/Documents/thesis/thesis-report
 

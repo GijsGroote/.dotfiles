@@ -2,8 +2,13 @@
 local keymap = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 
+
+-- todo move visual selectino aroundk
 -- Cancel search highlighting with ESC
+-- quickfist fast navigation
 keymap("n", "<ESC>", "<Cmd>nohlsearch<Bar>:echo<CR>", default_opts)
+
+keymap("n", "v", "v", default_opts)
 
 -- remove all trailing white space in file
 keymap("n", "rw", "<Cmd>%s/\\s\\+$//e<CR>", default_opts)
@@ -16,6 +21,8 @@ keymap("n", "M", "i<CR><C-c>k$", default_opts)
 
 keymap("n", "<leader>sp", "<Cmd>setlocal spell! spelllang=en_us<CR>", default_opts)
 
+-- paste and keep yanked text in default buffer
+keymap("x", "<leader>p", "\"_dP", default_opts) 
 
 -- windows to close with "q"
 vim.api.nvim_create_autocmd(

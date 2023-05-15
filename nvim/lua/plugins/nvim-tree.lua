@@ -5,27 +5,24 @@ return {
       "kyazdani42/nvim-web-devicons", -- optional, for file icons
     },
     keys = {
-      { "<leader>e", " <Cmd>NvimTreeToggle<CR>", desc = "Open Explorer"},
+      { "<leader>e", " <Cmd>NvimTreeToggle<CR>", desc = "Open Explorer" },
     },
-          -- toggle nvim-tree
-          e = {[[ <Cmd>NvimTreeToggle<CR> ]], "toggle NvimTree"},
 
     config = function()
-
-  require("nvim-tree").setup {
-    disable_netrw = false,
-    hijack_netrw = true,
-    view = {
-      number = true,
-      relativenumber = true,
-      side = "right",
-    },
-    update_cwd = false,
-    update_focused_file = {
-      enable = true,
-      update_cwd = true,
-    },
-  }
+      require("nvim-tree").setup({
+        disable_netrw = false,
+        hijack_netrw = true,
+        view = {
+          number = true,
+          relativenumber = true,
+          side = "right",
+        },
+        update_cwd = false,
+        update_focused_file = {
+          enable = true,
+          update_cwd = true,
+        },
+      })
       -- require("config.nvimtree").setup()
     end,
 
@@ -39,20 +36,19 @@ return {
   -- require("config.vimspector").setup()
   -- end,
   -- },
-
 }
 
-    -- config = function() 
-	   --  disable_netrw = false,
-	   --  hijack_netrw = true,
-	   --  view = {
-		  --   number = true,
-		  --   relativenumber = true,
-		  --   side = "right",
-	   --  },
-	   --  update_cwd = false,
-	   --  update_focused_file = {
-		  --   enable = true,
-		  --   update_cwd = true,
-	   --  },
-    -- end,
+-- config = function()
+--  disable_netrw = false,
+--  hijack_netrw = true,
+--  view = {
+--   number = true,
+--   relativenumber = true,
+--   side = "right",
+--  },
+--  update_cwd = false,
+--  update_focused_file = {
+--   enable = true,
+--   update_cwd = true,
+--  },
+-- end,
