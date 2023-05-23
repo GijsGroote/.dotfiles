@@ -6,7 +6,6 @@ return {
 
     keys = { 
       { "<leader>tm", "<Cmd>TZMinimalist<CR>", desc = "minimilist"},
-      { "v","<leader>tm", "<Cmd>TZMinimalist<CR>", desc = "minimilist"},
       { "<leader>ta", "<Cmd>TZAtaraxis<CR>", desc = "ataraxis"},
     },
 

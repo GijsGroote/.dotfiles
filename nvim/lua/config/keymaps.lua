@@ -8,8 +8,6 @@ local default_opts = { noremap = true, silent = true }
 -- quickfist fast navigation
 keymap("n", "<ESC>", "<Cmd>nohlsearch<Bar>:echo<CR>", default_opts)
 
-keymap("n", "v", "v", default_opts)
-
 -- remove all trailing white space in file
 keymap("n", "rw", "<Cmd>%s/\\s\\+$//e<CR>", default_opts)
 

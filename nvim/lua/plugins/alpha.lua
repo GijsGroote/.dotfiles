@@ -104,8 +104,8 @@ return {
 		    type = "group",
 		    val = {
 			    -- TODO: find nicer images for find file
-			    button("e", "  New file", "<Cmd>ene <BAR> startinsert <CR>"),
-			    button("f", "  Find file", "<Cmd>Telescope find_files <CR>"),
+			    button("e", "  New File", "<Cmd>ene <BAR> startinsert <CR>"),
+			    button("f", "  Find File", "<Cmd>Telescope find_files <CR>"),
 			    button("d", ".  Open Dotfiles", "<Cmd>e ~/.dotfiles/ <CR>"),
 			    button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins/plugins.lua <CR>"),
 			    button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc <CR>"),
