@@ -28,5 +28,7 @@ vim.api.nvim_create_autocmd(
   { pattern = { "help", "startuptime", "qf", "lspinfo" }, command = [[nnoremap <buffer><silent> q :close<CR>]] }
 )
 
-
+-- typing vy or vd is faster than yy or dd
+keymap("n", "vy", "yy", default_opts) 
+keymap("n", "vd", "dd", default_opts) 
 

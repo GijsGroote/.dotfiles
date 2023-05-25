@@ -4,12 +4,14 @@ return {
   -- sorter that prioritized file names over folder names
   {"natecraddock/telescope-zf-native.nvim"},
 
-  -- plenary dependency for telescope
-  {"nvim-lua/plenary.nvim"},
-
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
+
+    tag = '0.1.1',
+    -- plenary dependency for telescope
+    dependencies = {"nvim-lua/plenary.nvim"},
+
     keys = {
       { -- Lists files in your current working directory, respects .gitignore
         "<leader>ff",
@@ -42,7 +44,7 @@ return {
         desc = "Find help tags",
       },
     },
-    -- change some options
+    -- default looks
     opts = {
       defaults = {
         layout_strategy = "horizontal",
@@ -51,14 +53,14 @@ return {
         winblend = 0,
       },
 
+      -- specify how fuzzy search looks, seperate find_files, git_files from live_grep etc.
       pickers = {
+        buffers = { initial_mode = "normal", },
+        find_files = { initial_mode = "inseart", },
+        git_files = { initial_mode = "inseart", },
+        grep_string = { initial_mode = "inseart", },
+        live_grep = { theme = "dropdown", },
 
-        find_files = {
-          theme = "dropdown",
-        },
-        buffers = {
-          initial_mode = "normal",
-        },
       },
 
       extensions = {
