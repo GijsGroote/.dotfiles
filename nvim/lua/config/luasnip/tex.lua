@@ -13,12 +13,6 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
 
-  s({trig="sota"},
-  {
-    t("state-of-the-art"),
-  }
-  ),
-
   s({trig="sym", dscr="Expands 'sym' into '\\gls{}'"},
   {
     t("\\gls{"),

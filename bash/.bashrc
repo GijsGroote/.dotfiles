@@ -134,6 +134,6 @@ set -o vi
 # cd ~/.dotfiles/nvim
 # cd ~/Documents/semantic-thinking-robot
 # poetry shell
-cd ~/Documents/thesis/thesis-report
+cd ~/Documents
 
 clear
