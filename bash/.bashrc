@@ -131,9 +131,8 @@ export PATH="/home/gijs/.local/bin:$PATH"
 set -o vi
 
 # change directory
-# cd ~/.dotfiles/nvim
-# cd ~/Documents/semantic-thinking-robot
-# poetry shell
-cd ~/Documents
+cd ~/Documents/
+# cd ~/Documents/laserhok-workflow-documentation
+# cd ~/Documents/thesis/thesis-presentation
 
 clear

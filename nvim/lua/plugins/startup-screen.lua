@@ -150,7 +150,10 @@ startup_screen = {
 -- drop emoijs over the screen on special days
 local drop_emoijs = false
 
-if (os.date("%A") == "Monday") or 
+-- This is for mondays but that is annoying and only tell that it is monday, you mostly know which day it is
+-- (os.date("%A") == "Monday") 
+
+if  
   (os.date("%d/%m") == "27/09") or -- my birthday
   (os.date("%d/%m") == "01/01") or -- dutch holidays
   (os.date("%d/%m") == "07/04") or
@@ -175,19 +178,19 @@ if drop_emoijs then
 
       -- available themes "leaves", "snow", "stars", "xmas", "spring", "summer"
       -- on moday make a theme depending on the season
-      if (os.date("%A") == "Monday") then
+      -- if (os.date("%A") == "Monday") then
 
-        local currentMonth = tonumber(os.date("%m"))
-        if currentMonth >= 3 and currentMonth <= 5 then
-          theme = "spring"
-        elseif currentMonth >= 6 and currentMonth <= 8 then
-          theme = "summer"
-        elseif currentMonth >= 9 and currentMonth <= 11 then
-          theme = "leaves"
-        else
-          theme = "snow"
-        end
-      end
+      --   local currentMonth = tonumber(os.date("%m"))
+      --   if currentMonth >= 3 and currentMonth <= 5 then
+      --     theme = "spring"
+      --   elseif currentMonth >= 6 and currentMonth <= 8 then
+      --     theme = "summer"
+      --   elseif currentMonth >= 9 and currentMonth <= 11 then
+      --     theme = "leaves"
+      --   else
+      --     theme = "snow"
+      --   end
+      -- end
 
       if (os.date("%d/%m") == "27/09") or -- TODO: make a birthday theme 
         (os.date("%d/%m") == "01/01") or -- dutch holidays

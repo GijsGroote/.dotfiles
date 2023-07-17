@@ -11,3 +11,6 @@
 #### then to search and replace "Tom" with "Chris":
 
 `:cfdo %s/Tom/Chris/gc | update`
+
+### match every \gls{whatever} and replace it by whatever
+`:%s/\\gls{\(.\{,2}\)}/\1/gce`
