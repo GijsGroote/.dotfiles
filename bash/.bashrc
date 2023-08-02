@@ -131,8 +131,9 @@ export PATH="/home/gijs/.local/bin:$PATH"
 set -o vi
 
 # change directory
-cd ~/Documents/
-# cd ~/Documents/laserhok-workflow-documentation
+# cd ~/Documents:/
+# cd ~/.dotfiles
+cd ~/Documents/laserhok-workflow-documentation/3d-printers/workflow/
 # cd ~/Documents/thesis/thesis-presentation
 
 clear

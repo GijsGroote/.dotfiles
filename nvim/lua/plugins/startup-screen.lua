@@ -1,217 +1,70 @@
--- Startup screen
-startup_screen = {
+return {}
+---- start screen
+--return {
+--  -- disable alpha
+--  { "goolord/alpha-nvim", enabled = false },
 
-  {'goolord/alpha-nvim',
-  dependencies = {
-    'kyazdani42/nvim-web-devicons'
-  },
+--  -- enable mini.starter
+--  {
+--    "echasnovski/mini.starter",
+--    version = false, -- wait till new 0.7.0 release to put it back on semver
+--    event = "VimEnter",
+--    opts = function()
+--      local pad = string.rep(" ", 22)
+--      local new_section = function(name, action, section)
+--        return { name = name, action = action, section = pad .. section }
+--      end
 
-    -- Warning: long configuration function
-    config = function() 
+--      local starter = require("mini.starter")
+--      --stylua: ignore
+--      local config = {
+--        evaluate_single = true,
+--        header = require("config.ancii.ancii").get_random_ancii_art(),
+--        items = {
+--          new_section("Find file",    "Telescope find_files", "Telescope"),
+--          new_section("Recent files", "Telescope oldfiles",   "Telescope"),
+--          new_section("Grep text",    "Telescope live_grep",  "Telescope"),
+--          new_section("init.lua",     "e $MYVIMRC",           "Config"),
+--          new_section("Lazy",         "Lazy",                 "Config"),
+--          new_section("New file",     "ene | startinsert",    "Built-in"),
+--          new_section("Quit",         "qa",                   "Built-in"),
+--          new_section("Session restore", [[lua require("persistence").load()]], "Session"),
+--        },
+--        content_hooks = {
+--          starter.gen_hook.adding_bullet(pad .. "░ ", false),
+--          starter.gen_hook.aligning("center", "center"),
+--        },
+--      }
+--      return config
+--    end,
+--    config = function(_, config)
+--      -- close Lazy and re-open when starter is ready
+--      if vim.o.filetype == "lazy" then
+--        vim.cmd.close()
+--        vim.api.nvim_create_autocmd("User", {
+--          pattern = "MiniStarterOpened",
+--          callback = function()
+--            require("lazy").show()
+--          end,
+--        })
+--      end
 
-	    local if_nil = vim.F.if_nil
+--      local starter = require("mini.starter")
+--      starter.setup(config)
 
-	    local default_terminal = {
-		    type = "terminal",
-		    command = nil,
-		    width = 69,
-		    height = 8,
-		    opts = {
-			    redraw = true,
-			    window_config = {},
-		    },
-	    }
-
-	    local default_header = {
-		    type = "text",
-		    val = require("config.ancii.ancii").get_random_ancii_art(),
-		    opts = {
-			    position = "center",
-			    hl = "Include",
-			    -- wrap = "overflow";
-		    },
-	    }
-
-	    local stats = require("lazy").stats()
-	    local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-	    local pad_footer = string.rep(" ", 8)
-	    -- TODO: you can create a callback to update the footer when lazy has loaded
-	    -- see https://www.lazyvim.org/plugins/extras/ui.mini-starter
-
-
-
-	    local datetime = os.date "%d-%m-%Y %H:%M:%S"
-	    local plugins_text =
-	    "  loaded "
-	    .. stats.count 
-	    .. " plugins   v" 
-	    .. vim.version().major
-	    .. "."
-	    .. vim.version().minor
-	    .. "."
-	    .. vim.version().patch
-	    .. "   "
-	    .. datetime
-
-	    -- Quote
-	    local fortune = require "alpha.fortune"
-	    local quote = table.concat(fortune(), "\n")
-
-	    local footer = {
-		    type = "text",
-		    val = plugins_text .. "\n" .. quote,
-		    opts = {
-			    position = "center",
-			    hl = "Constant",
-		    },
-	    }
-
-	    local leader = "SPC"
-
-	    --- @param sc string
-	    --- @param txt string
-	    --- @param keybind string? optional
-	    --- @param keybind_opts table? optional
-	    local function button(sc, txt, keybind, keybind_opts)
-		    local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
-
-		    local opts = {
-			    position = "center",
-			    shortcut = sc,
-			    cursor = 5,
-			    width = 50,
-			    align_shortcut = "right",
-			    hl_shortcut = "Keyword",
-		    }
-		    if keybind then
-			    keybind_opts = if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
-			    opts.keymap = { "n", sc_, keybind, keybind_opts }
-		    end
-
-		    local function on_press()
-			    local key = vim.api.nvim_replace_termcodes(keybind or sc_ .. "<Ignore>", true, false, true)
-			    vim.api.nvim_feedkeys(key, "t", false)
-		    end
-
-		    return {
-			    type = "button",
-			    val = txt,
-			    on_press = on_press,
-			    opts = opts,
-		    }
-	    end
-
-	    local buttons = {
-		    type = "group",
-		    val = {
-			    button("e", "  New File", "<Cmd>ene <BAR> startinsert <CR>"),
-			    -- button("f", "󰈞  Find File", 'require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })'),
-          button("f", "󰈞  Find file"),
-			    button("d", ".  Open Dotfiles", "<Cmd>e ~/.dotfiles/ <CR>"),
-			    button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins/plugins.lua <CR>"),
-			    button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc <CR>"),
-			    button("q", "  Quit Neovim", "<Cmd>qa <CR>"),
-			    button("h", "  Recent files", "<Cmd>Telescope oldfiles <CR>"),
-		    },
-		    opts = {
-			    spacing = 1,
-          hl = "Function",
-          hl_shortcut = "Type",
-
-		    },
-	    }
-
-	    local section = {
-		    terminal = default_terminal,
-		    header = default_header,
-		    buttons = buttons,
-		    footer = footer,
-	    }
-
-	    local config = {
-		    layout = {
-			    { type = "padding", val = 2 },
-			    section.header,
-			    { type = "padding", val = 2 },
-			    section.buttons,
-			    section.footer,
-		    },
-		    opts = {
-			    margin = 5,
-		    },
-	    }
-
-      require('alpha').setup(config)
-    end
-  },
-}
+--      vim.api.nvim_create_autocmd("User", {
+--        pattern = "LazyVimStarted",
+--        callback = function()
+--          local stats = require("lazy").stats()
+--          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+--          local pad_footer = string.rep(" ", 8)
+--          starter.config.footer = pad_footer .. "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+--          pcall(starter.refresh)
+--        end,
+--      })
+--    end,
+--  },
+--}
 
 
--- drop emoijs over the screen on special days
-local drop_emoijs = false
 
--- This is for mondays but that is annoying and only tell that it is monday, you mostly know which day it is
--- (os.date("%A") == "Monday") 
-
-if  
-  (os.date("%d/%m") == "27/09") or -- my birthday
-  (os.date("%d/%m") == "01/01") or -- dutch holidays
-  (os.date("%d/%m") == "07/04") or
-  (os.date("%d/%m") == "09/04") or
-  (os.date("%d/%m") == "10/04") or
-  (os.date("%d/%m") == "27/04") or
-  (os.date("%d/%m") == "05/05") or
-  (os.date("%d/%m") == "18/05") or
-  (os.date("%d/%m") == "28/05") or
-  (os.date("%d/%m") == "29/05") or
-  (os.date("%d/%m") == "25/12") or
-  (os.date("%d/%m") == "26/12") then
-  drop_emoijs = true 
-end
-
-if drop_emoijs then 
-  table.insert(startup_screen, { 
-    "folke/drop.nvim",
-    event = "VimEnter",
-    config = function()
-      local theme = ""
-
-      -- available themes "leaves", "snow", "stars", "xmas", "spring", "summer"
-      -- on moday make a theme depending on the season
-      -- if (os.date("%A") == "Monday") then
-
-      --   local currentMonth = tonumber(os.date("%m"))
-      --   if currentMonth >= 3 and currentMonth <= 5 then
-      --     theme = "spring"
-      --   elseif currentMonth >= 6 and currentMonth <= 8 then
-      --     theme = "summer"
-      --   elseif currentMonth >= 9 and currentMonth <= 11 then
-      --     theme = "leaves"
-      --   else
-      --     theme = "snow"
-      --   end
-      -- end
-
-      if (os.date("%d/%m") == "27/09") or -- TODO: make a birthday theme 
-        (os.date("%d/%m") == "01/01") or -- dutch holidays
-        (os.date("%d/%m") == "07/04") or
-        (os.date("%d/%m") == "09/04") or
-        (os.date("%d/%m") == "10/04") or
-        (os.date("%d/%m") == "27/04") or
-        (os.date("%d/%m") == "05/05") or
-        (os.date("%d/%m") == "18/05") then
-        theme = "stars"      
-      end
-
-      if (os.date("%d/%m") == "28/05") or
-        (os.date("%d/%m") == "29/05") then
-        theme = "xmax"      
-      end
-
-      require("drop").setup { theme = theme }
-
-    end,
-  })
-end
-
-return startup_screen

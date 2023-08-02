@@ -6,14 +6,9 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "tokyonight",
-      colorscheme = "catppuccin",
-      -- colorscheme = "gruvbox",
+      -- colorscheme = "catppuccin",
+      colorscheme = "gruvbox",
     },
-  },
-
-  -- git intergration
-  {"kdheepak/lazygit.nvim",
-    keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Lazy Git" } },
   },
 
   -- absolute and relative line numbering
