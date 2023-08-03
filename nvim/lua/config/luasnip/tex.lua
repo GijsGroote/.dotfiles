@@ -147,7 +147,19 @@ t({"\\begin{table}[H]",
 })
 ),
 
-
+s({trig="article", dscr="Expands 'article' into a article document"},
+t({"\\documentclass{article}",
+"\\usepackage[utf8]{inputenc}",
+"\\usepackage{graphicx}",
+"\\usepackage{float}",
+"\\usepackage{caption}",
+"",
+"\\begin{document}",
+"\\section{todo}",
+"todo",
+"\\end{document}",
+})
+),
 
 s({trig="ref", dscr="Expands 'ref' into '\\Cref{}'"},
 {
