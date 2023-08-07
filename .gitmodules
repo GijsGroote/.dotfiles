@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "mwe_nvim/lazy_starter"]
+	path = mwe_nvim/lazy_starter
+	url = git@github.com:LazyVim/starter.git
