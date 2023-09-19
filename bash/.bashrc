@@ -133,7 +133,7 @@ set -o vi
 # change directory
 # cd ~/Documents:/
 # cd ~/.dotfiles
-cd ~/Documents/laserhok-workflow/3d-printers/implementation/
+# cd ~/Documents/laserhok-workflow/3d-printers/implementation/
 # cd ~/Documents/thesis/thesis-presentation
 
 clear
