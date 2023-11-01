@@ -64,9 +64,9 @@ call s:TexSetMakePrg()  " set value of Vim's `makeprg` option
 nmap <localleader>r <Cmd>make<CR>
 nmap <localleader>f <Plug>TexFocusVim()
 
-nmap <localleader>o <Plug>TexToggleLatexmk
 nnoremap <script> <Plug>TexToggleLatexmk <SID>TexToggleLatexmk
 nnoremap <SID>TexToggleLatexmk :call <SID>TexToggleLatexmk()<CR>
+nmap <localleader>o <Plug>TexToggleLatexmk
 
 
 " Don't open QuickFix for warning messages if no errors are present
