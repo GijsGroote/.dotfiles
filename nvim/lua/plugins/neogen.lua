@@ -2,7 +2,7 @@
 return {
   "danymat/neogen",
   dependencies = "nvim-treesitter/nvim-treesitter",
-  config = {
+  opts = {
     ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "bash" },
   },
   keys = {

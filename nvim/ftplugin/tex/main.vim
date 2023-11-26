@@ -20,7 +20,9 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'LaTeX Warning: .\+ float specifier changed to',
       \ 'LaTeX hooks Warning',
       \ 'Package siunitx Warning: Detected the "physics" package:',
+      \ 'Package babel Warning: No hyphenation ',
       \ 'Package hyperref Warning: Token not allowed in a PDF string',
+      \ 'Package auxhook Warning: Cannot patch '
       \]
 
 " compilter settings

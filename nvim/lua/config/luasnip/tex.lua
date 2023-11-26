@@ -13,6 +13,16 @@ local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
 
+  s({trig="b", dscr="Expands 'b' into '\\babel{}{}'"},
+  {
+    t("\\babel{"),
+    i(1),
+    t("}{"),
+    i(2),
+    t("}"),
+  }
+  ),
+
   s({trig="sym", dscr="Expands 'sym' into '\\gls{}'"},
   {
     t("\\gls{"),
