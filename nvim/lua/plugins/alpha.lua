@@ -1,5 +1,5 @@
 -- Startup screen
-startup_screen = {
+return {
 
   {'goolord/alpha-nvim',
   dependencies = {
@@ -69,6 +69,7 @@ startup_screen = {
 		    }
 	    end
 
+
 	    local buttons = {
 		    type = "group",
 		    val = {
@@ -78,30 +79,26 @@ startup_screen = {
 			    button("d", ".  Open Dotfiles", "<Cmd>e ~/.dotfiles/ <CR>"),
 			    button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins/plugins.lua <CR>"),
 			    button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc <CR>"),
-			    button("q", "  Quit Neovim", "<Cmd>qa <CR>"),
-			    button("h", "  Recent files", "<Cmd>Telescope oldfiles <CR>"),
+			    button("q", "󰅙  Quit Neovim", "<Cmd>qa <CR>"),
+			    button("h", "  Recent files", "<Cmd>Telescope oldfiles <CR>"),
 		    },
 		    opts = {
 			    spacing = 1,
           hl = "Function",
           hl_shortcut = "Type",
-
 		    },
 	    }
 
 	    local stats = require("lazy").stats()
-	    local datetime = os.date "%d-%m-%Y %H:%M:%S"
 	    local plugins_text =
-          "  loaded "
+          "  loaded "
           .. stats.count 
-          .. " plugins in ? ms  v" 
+          .. " plugins in ? ms - NeoVim v" 
           .. vim.version().major
           .. "."
           .. vim.version().minor
 	    .. "."
 	    .. vim.version().patch
-	    .. "   "
-	    .. datetime
 
 	    -- Quote
 	    local fortune = require "alpha.fortune"
@@ -160,9 +157,6 @@ startup_screen = {
           .. vim.version().minor
           .. "."
           .. vim.version().patch
-          .. "   "
-          .. datetime
-
 
           local footer = {
             type = "text",
@@ -198,78 +192,75 @@ startup_screen = {
 
         end,
       })
-
-
     end
-  },
-}
+  }
 
 
 -- drop emoijs over the screen on special days
-local drop_emoijs = false
+-- local drop_emoijs = false
 
 -- This is for mondays but that is annoying and only tell that it is monday, you mostly know which day it is
 -- (os.date("%A") == "Monday") 
 
-if  
-  (os.date("%d/%m") == "27/09") or -- my birthday
-  (os.date("%d/%m") == "01/01") or -- dutch holidays
-  (os.date("%d/%m") == "07/04") or
-  (os.date("%d/%m") == "09/04") or
-  (os.date("%d/%m") == "10/04") or
-  (os.date("%d/%m") == "27/04") or
-  (os.date("%d/%m") == "05/05") or
-  (os.date("%d/%m") == "18/05") or
-  (os.date("%d/%m") == "28/05") or
-  (os.date("%d/%m") == "29/05") or
-  (os.date("%d/%m") == "25/12") or
-  (os.date("%d/%m") == "26/12") then
-  drop_emoijs = true 
-end
+-- if  
+--   (os.date("%d/%m") == "27/09") or -- my birthday
+--   (os.date("%d/%m") == "01/01") or -- dutch holidays
+--   (os.date("%d/%m") == "07/04") or
+--   (os.date("%d/%m") == "09/04") or
+--   (os.date("%d/%m") == "10/04") or
+--   (os.date("%d/%m") == "27/04") or
+--   (os.date("%d/%m") == "05/05") or
+--   (os.date("%d/%m") == "18/05") or
+--   (os.date("%d/%m") == "28/05") or
+--   (os.date("%d/%m") == "29/05") or
+--   (os.date("%d/%m") == "25/12") or
+--   (os.date("%d/%m") == "26/12") then
+--   drop_emoijs = true 
+-- end
 
-if drop_emoijs then 
-  table.insert(startup_screen, { 
-    "folke/drop.nvim",
-    event = "VimEnter",
-    config = function()
-      local theme = ""
+-- if drop_emoijs then 
+--   table.insert(startup_screen, { 
+--     "folke/drop.nvim",
+--     event = "VimEnter",
+--     config = function()
+--       local theme = ""
 
-      -- available themes "leaves", "snow", "stars", "xmas", "spring", "summer"
-      -- on moday make a theme depending on the season
-      -- if (os.date("%A") == "Monday") then
+--       -- available themes "leaves", "snow", "stars", "xmas", "spring", "summer"
+--       -- on moday make a theme depending on the season
+--       -- if (os.date("%A") == "Monday") then
 
-      --   local currentMonth = tonumber(os.date("%m"))
-      --   if currentMonth >= 3 and currentMonth <= 5 then
-      --     theme = "spring"
-      --   elseif currentMonth >= 6 and currentMonth <= 8 then
-      --     theme = "summer"
-      --   elseif currentMonth >= 9 and currentMonth <= 11 then
-      --     theme = "leaves"
-      --   else
-      --     theme = "snow"
-      --   end
-      -- end
+--       --   local currentMonth = tonumber(os.date("%m"))
+--       --   if currentMonth >= 3 and currentMonth <= 5 then
+--       --     theme = "spring"
+--       --   elseif currentMonth >= 6 and currentMonth <= 8 then
+--       --     theme = "summer"
+--       --   elseif currentMonth >= 9 and currentMonth <= 11 then
+--       --     theme = "leaves"
+--       --   else
+--       --     theme = "snow"
+--       --   end
+--       -- end
 
-      if (os.date("%d/%m") == "27/09") or -- TODO: make a birthday theme 
-        (os.date("%d/%m") == "01/01") or -- dutch holidays
-        (os.date("%d/%m") == "07/04") or
-        (os.date("%d/%m") == "09/04") or
-        (os.date("%d/%m") == "10/04") or
-        (os.date("%d/%m") == "27/04") or
-        (os.date("%d/%m") == "05/05") or
-        (os.date("%d/%m") == "18/05") then
-        theme = "stars"      
-      end
+--       if (os.date("%d/%m") == "27/09") or -- TODO: make a birthday theme 
+--         (os.date("%d/%m") == "01/01") or -- dutch holidays
+--         (os.date("%d/%m") == "07/04") or
+--         (os.date("%d/%m") == "09/04") or
+--         (os.date("%d/%m") == "10/04") or
+--         (os.date("%d/%m") == "27/04") or
+--         (os.date("%d/%m") == "05/05") or
+--         (os.date("%d/%m") == "18/05") then
+--         theme = "stars"      
+--       end
 
-      if (os.date("%d/%m") == "28/05") or
-        (os.date("%d/%m") == "29/05") then
-        theme = "xmax"      
-      end
+--       if (os.date("%d/%m") == "28/05") or
+--         (os.date("%d/%m") == "29/05") then
+--         theme = "xmax"      
+--       end
 
-      require("drop").setup { theme = theme }
+--       require("drop").setup { theme = theme }
 
-    end,
-  })
-end
+--     end,
+  -- })
+-- end
 
-return startup_screen
+}

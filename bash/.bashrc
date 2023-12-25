@@ -105,6 +105,9 @@ fi
 # TODO: this should be done by install.conf.yaml innit?
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+
+QT_QPA_PLATFORM=wayland
+
 # kitty terminator view image
 alias icat="kitty +kitten icat"
 
@@ -127,12 +130,14 @@ export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 # add poetry
 export PATH="/home/gijs/.local/bin:$PATH"
 
+EDITOR=nvim
+
 # create vim normal mode on ESC
 set -o vi
 
 # change directory
-# cd ~/Documents:/
+# cd ~/Documents/familiekrant
 # cd ~/.dotfiles
-cd ~/Documents/laserhok-workflow/pmma-laser/implementation/
+cd ~/Documents/laserhok-workflow/src/
 # cd ~/Documents/Resume/
 clear
