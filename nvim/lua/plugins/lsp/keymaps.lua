@@ -23,7 +23,7 @@ function M.get()
       { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
-      { "<leader>rn", "<cmd>lua vim.lsp.buf.rename() <cr>", desc = "rename"},
+      -- { "<leader>rn", "<cmd>lua vim.lsp.buf.rename() <cr>", desc = "rename"},
       {
         "<leader>cA",
         function()
