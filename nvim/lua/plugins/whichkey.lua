@@ -44,7 +44,7 @@ return {
         local n_keymap = {
 
           -- Turn camelCase into snake_case
-          sc = { [[ <Cmd>lua require("config.custom_keymaps").snake_case()<CR> ]], "snake_case" },
+          sc = { [[ <Cmd>lua require("config.custom-keymaps").snake_case()<CR> ]], "snake_case" },
 
           -- JSON formatter
           j = { [[ <Cmd>%!jq .<CR>$ ]], "JSON formatter" },

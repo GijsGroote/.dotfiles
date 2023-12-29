@@ -136,8 +136,8 @@ EDITOR=nvim
 set -o vi
 
 # change directory
-# cd ~/Documents/familiekrant
+# cd ~/Documents/familiekrant_45
 # cd ~/.dotfiles
-cd ~/Documents/laserhok-workflow/src/
+cd ~/Documents/laserhok-workflow/
 # cd ~/Documents/Resume/
 clear
