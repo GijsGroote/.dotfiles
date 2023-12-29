@@ -73,14 +73,14 @@ return {
 	    local buttons = {
 		    type = "group",
 		    val = {
+          -- todo fix thos buttons, they are nice
 			    button("e", "  New File", "<Cmd>ene <BAR> startinsert <CR>"),
-			    -- button("f", "󰈞  Find File", 'require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })'),
-          button("f", "󰈞  Find file"),
+			    -- button("f", "󰈞  Find File", 'require("telescope.builtin").find_files()'),
 			    button("d", ".  Open Dotfiles", "<Cmd>e ~/.dotfiles/ <CR>"),
 			    button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins/plugins.lua <CR>"),
 			    button("b", "  Open .bashrc", "<Cmd>n ~/.bashrc <CR>"),
 			    button("q", "󰅙  Quit Neovim", "<Cmd>qa <CR>"),
-			    button("h", "  Recent files", "<Cmd>Telescope oldfiles <CR>"),
+			    -- button("h", "  Recent files", "<Cmd>Telescope oldfiles <CR>"),
 		    },
 		    opts = {
 			    spacing = 1,
