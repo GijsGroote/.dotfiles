@@ -26,7 +26,7 @@ return {
       -- require("config.nvimtree").setup()
     end,
 
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
+    -- tag = "nightly", -- optional, updated every week. (see issue #1193)
   },
 
   --  -- vimspector

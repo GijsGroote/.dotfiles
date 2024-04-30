@@ -14,4 +14,4 @@ If you somehow forget, the folders contain:
 - dotbot: backup functionality and easy configuration
 - nvim: neovim configuration
 
-Happy coding ❤️k
+Happy coding k

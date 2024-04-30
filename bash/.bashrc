@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -115,9 +111,6 @@ alias icat="kitty +kitten icat"
 alias p3='python3' 
 alias p2='python2' 
 
-# add secrets
-source "/home/gijs/.ssh/secrets"
-
 # add neovim to path
 alias vim="nvim"
 alias vi="nvim"
@@ -135,9 +128,6 @@ EDITOR=nvim
 # create vim normal mode on ESC
 set -o vi
 
-# change directory
-# cd ~/Documents/familiekrant_45
-# cd ~/.dotfiles
-cd ~/Documents/laserhok-workflow/
-# cd ~/Documents/Resume/
-clear
+eval "$(zoxide init bash)"
+poetry completions bash >> ~/.bash_completion
+
