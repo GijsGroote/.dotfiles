@@ -128,6 +128,13 @@ EDITOR=nvim
 # create vim normal mode on ESC
 set -o vi
 
+# git <TAB> completion
+source /usr/share/bash-completion/completions/git
+
+
 eval "$(zoxide init bash)"
 poetry completions bash >> ~/.bash_completion
 
+# cd ~/Documents/creator_administrator
+cd ~/Documents/MagnetoSlicer
+poetry shell
