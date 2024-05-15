@@ -22,4 +22,19 @@ return {
   }
   ),
 
+  s({trig="class", dscr="Expands 'class' into dummy class"},
+  {
+    t("class "),
+    i(1, "ClassName"),
+    t(":"),
+    t({"",
+    "",
+    "    def __init__(self):",
+    "        pass",
+    "",
+    "    def dummy_method(self):",
+    "        pass"}),
+  }),
+
+
 }

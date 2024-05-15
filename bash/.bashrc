@@ -136,5 +136,6 @@ eval "$(zoxide init bash)"
 poetry completions bash >> ~/.bash_completion
 
 # cd ~/Documents/creator_administrator
-cd ~/Documents/MagnetoSlicer
+cd ~/Documents/Magneto-Print-Manager
+# cd ~/Documents
 poetry shell
