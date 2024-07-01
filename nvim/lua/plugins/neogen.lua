@@ -7,8 +7,8 @@ return {
   },
   keys = {
     { "<leader>nf", ":lua require('neogen').generate()<CR>", desc = "insert annatation" },
-    { "<C-n>", "<C-c>:lua require('neogen').jump_next()<CR>i", desc = "neogen: jump to next", mode="i" },
-    { "<C-p>", "<C-c>:lua require('neogen').jump_prev()<CR>i", desc = "neogen: jump to next", mode="i" },
+    -- { "<TAB>", "<C-c>:lua require('neogen').jump_next()<CR>i", desc = "neogen: jump to next", mode="i" },
+    -- { "<C-p>", "<C-c>:lua require('neogen').jump_prev()<CR>i", desc = "neogen: jump to next", mode="i" },
   },
 
 }

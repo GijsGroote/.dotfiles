@@ -18,10 +18,10 @@ opt.path:remove "/usr/include"
 opt.path:append "**"
 
 -- Indentation
-opt.smartindent = true
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
 opt.expandtab = true
+opt.smartindent = true
+opt.shiftwidth = 2
 opt.number = true
 
 
