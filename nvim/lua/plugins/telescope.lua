@@ -55,7 +55,7 @@ return {
       -- specify how fuzzy search looks, seperate find_files, git_files from live_grep etc.
       pickers = {
         buffers = { initial_mode = "normal", },
-        find_files = { initial_mode = "insert", },
+        find_files = { initial_mode = "insert", hidden = true },
         git_files = { initial_mode = "insert", },
         grep_string = { initial_mode = "insert", },
         live_grep = { theme = "dropdown", },
