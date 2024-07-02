@@ -44,7 +44,7 @@ return {
         local n_keymap = {
 
           -- remove all trailing white space in file
-          rw = {[[ <Cmd>%s/\\s\\+$//e<CR> ]], "remove trailing whitespace"},
+          rw = {[[ <Cmd>:%s/\s\+$//e<CR> ]], "remove trailing whitespace"},
 
           -- Turn camelCase into snake_case
           sc = { [[ <Cmd>lua require("config.custom-keymaps").snake_case()<CR> ]], "snake_case" },

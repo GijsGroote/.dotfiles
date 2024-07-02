@@ -5,6 +5,10 @@ local default_opts = { noremap = true, silent = true }
 -- turn highlighting off
 keymap("n", "<ESC>", "<Cmd>nohlsearch<Bar>:echo<CR>", default_opts)
 
+-- copy to global register TODO: this thingy, control shift y is preferred
+-- keymap("n", "<C-S-y>", '<Cmd>"+yy<CR>', default_opts)
+-- keymap("v", "<C-S-y>", '<Cmd>"+y<CR>', default_opts)
+
 -- newline without going into inseart mode
 keymap("n", "m", "o<C-c>", default_opts)
 
