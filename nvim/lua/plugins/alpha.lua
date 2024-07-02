@@ -93,7 +93,7 @@ return {
 	    local plugins_text =
           "  loaded "
           .. stats.count 
-          .. " plugins in ? ms - NeoVim v" 
+          .. " plugins - NeoVim v" 
           .. vim.version().major
           .. "."
           .. vim.version().minor
