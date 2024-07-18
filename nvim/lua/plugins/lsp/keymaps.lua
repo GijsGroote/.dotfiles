@@ -1,4 +1,4 @@
---local M = {}
+local M = {}
 
 
 ---@type LazyKeysLspSpec[]|nil

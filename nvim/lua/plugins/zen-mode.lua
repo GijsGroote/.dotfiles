@@ -1,19 +1,20 @@
 -- Zen mode
+return {}
 
-return {
-  {
-    "Pocco81/true-zen.nvim",
+-- return {
+--   {
+--     "Pocco81/true-zen.nvim",
 
-    keys = { 
-      { "<leader>tm", "<Cmd>TZMinimalist<CR>", desc = "minimilist"},
-      { "<leader>ta", "<Cmd>TZAtaraxis<CR>", desc = "ataraxis"},
-    },
+--     keys = { 
+--       { "<leader>tm", "<Cmd>TZMinimalist<CR>", desc = "minimilist"},
+--       { "<leader>ta", "<Cmd>TZAtaraxis<CR>", desc = "ataraxis"},
+--     },
 
-    config = function()
-      require("true-zen").setup({
-        -- your config goes here
-        -- or just leave it empty :)
-      })
-    end,
-  },
-}
+--     config = function()
+--       require("true-zen").setup({
+--         -- your config goes here
+--         -- or just leave it empty :)
+--       })
+--     end,
+--   },
+-- }

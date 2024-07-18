@@ -1,4 +1,5 @@
 -- Startup screen
+
 return {
 
   {'goolord/alpha-nvim',
@@ -194,73 +195,4 @@ return {
       })
     end
   }
-
-
--- drop emoijs over the screen on special days
--- local drop_emoijs = false
-
--- This is for mondays but that is annoying and only tell that it is monday, you mostly know which day it is
--- (os.date("%A") == "Monday") 
-
--- if  
---   (os.date("%d/%m") == "27/09") or -- my birthday
---   (os.date("%d/%m") == "01/01") or -- dutch holidays
---   (os.date("%d/%m") == "07/04") or
---   (os.date("%d/%m") == "09/04") or
---   (os.date("%d/%m") == "10/04") or
---   (os.date("%d/%m") == "27/04") or
---   (os.date("%d/%m") == "05/05") or
---   (os.date("%d/%m") == "18/05") or
---   (os.date("%d/%m") == "28/05") or
---   (os.date("%d/%m") == "29/05") or
---   (os.date("%d/%m") == "25/12") or
---   (os.date("%d/%m") == "26/12") then
---   drop_emoijs = true 
--- end
-
--- if drop_emoijs then 
---   table.insert(startup_screen, { 
---     "folke/drop.nvim",
---     event = "VimEnter",
---     config = function()
---       local theme = ""
-
---       -- available themes "leaves", "snow", "stars", "xmas", "spring", "summer"
---       -- on moday make a theme depending on the season
---       -- if (os.date("%A") == "Monday") then
-
---       --   local currentMonth = tonumber(os.date("%m"))
---       --   if currentMonth >= 3 and currentMonth <= 5 then
---       --     theme = "spring"
---       --   elseif currentMonth >= 6 and currentMonth <= 8 then
---       --     theme = "summer"
---       --   elseif currentMonth >= 9 and currentMonth <= 11 then
---       --     theme = "leaves"
---       --   else
---       --     theme = "snow"
---       --   end
---       -- end
-
---       if (os.date("%d/%m") == "27/09") or -- TODO: make a birthday theme 
---         (os.date("%d/%m") == "01/01") or -- dutch holidays
---         (os.date("%d/%m") == "07/04") or
---         (os.date("%d/%m") == "09/04") or
---         (os.date("%d/%m") == "10/04") or
---         (os.date("%d/%m") == "27/04") or
---         (os.date("%d/%m") == "05/05") or
---         (os.date("%d/%m") == "18/05") then
---         theme = "stars"      
---       end
-
---       if (os.date("%d/%m") == "28/05") or
---         (os.date("%d/%m") == "29/05") then
---         theme = "xmax"      
---       end
-
---       require("drop").setup { theme = theme }
-
---     end,
-  -- })
--- end
-
 }

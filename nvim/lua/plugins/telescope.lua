@@ -66,8 +66,6 @@ return {
         { "natecraddock/telescope-zf-native.nvim"},
       },
 
-
-
       -- { "nvim-telescope/telescope.nvim", dependencies = "tsakirist/telescope-lazy.nvim" },
       -- { "natecraddock/telescope-zf-native.nvim"},
 
