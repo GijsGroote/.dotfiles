@@ -34,9 +34,6 @@ g.maplocalleader = " "
 -- g.loaded_perl_provider = 0
 -- g.loaded_python3_provider = 0
 
--- setup all plugins in lua/plugins directory
--- require("lazy").setup('plugins')
-
 -- setup all plugins in the minimum working example 
 require("lazy").setup('plugins')
 

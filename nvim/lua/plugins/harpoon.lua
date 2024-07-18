@@ -18,6 +18,8 @@ return {
       { "<leader>2", [[ <Cmd>lua require("harpoon.ui").nav_file(2)<CR> ]], desc = "goto file 2" },
       { "<leader>3", [[ <Cmd>lua require("harpoon.ui").nav_file(3)<CR> ]], desc = "goto file 3" },
       { "<leader>4", [[ <Cmd>lua require("harpoon.ui").nav_file(4)<CR> ]], desc = "goto file 4" },
+      { "<leader>5", [[ <Cmd>lua require("harpoon.ui").nav_file(5)<CR> ]], desc = "goto file 5" },
+      { "<leader>6", [[ <Cmd>lua require("harpoon.ui").nav_file(6)<CR> ]], desc = "goto file 6" },
     },
   },
 }

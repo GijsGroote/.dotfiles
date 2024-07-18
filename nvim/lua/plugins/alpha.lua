@@ -144,7 +144,7 @@ return {
           local stats = require("lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
 
-          print(' loaded in ',ms)
+          -- print(' loaded in ',ms)
 
           local plugins_text =
           "  loaded "

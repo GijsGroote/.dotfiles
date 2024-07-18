@@ -67,9 +67,6 @@ return {
             f = { "<Cmd>BDelete! this<Cr>", "Force Close Buffer" },
             D = { "<Cmd>BWipeout other<Cr>", "Delete All Buffers" },
           },
-
-          L = {[[ <Cmd>Lazy<CR> ]], "Lazy"},
-
         }
         whichkey.register(n_keymap, opts)
       end
