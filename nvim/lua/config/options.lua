@@ -4,6 +4,7 @@
 local g = vim.g
 vim.opt.path:append "/usr/bin/glow"
 g.python3_host_prog = "/usr/bin/python3"
+let g:loaded_perl_provider = 0`
 g.loaded_perl_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_netrw = 1

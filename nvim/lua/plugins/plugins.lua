@@ -11,6 +11,8 @@ return {
     },
   },
 
+  -- mini.icons 
+{ 'echasnovski/mini.nvim', version = false },
   ---- ALE (Asynchronous Lint Engine)
   --{ "dense-analysis/ale" },
 
@@ -24,7 +26,7 @@ return {
   --"sitiom/nvim-numbertoggle",
 
   -- Better Comment
-  "tpope/vim-commentary",
+  --"tpope/vim-commentary",
 
   ---- IndentLine
   --{
