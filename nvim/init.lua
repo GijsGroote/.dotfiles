@@ -43,8 +43,7 @@ g.pydocstring_doq_path = "/home/gijs/.local/bin/doq"
 --    command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
 --  })
 
--- setup all plugins in the minimum working example 
-require("lazy").setup('plugins')
+require("config.lazy")
 
 
 

@@ -9,7 +9,6 @@
     ~/.profile: bash/.profile
     ~/.config/nvim: nvim
     #~/.config/nvim: mwe_nvim/lazy_starter/
-    #~/.config/nvim: mwe_nvim/minimum_working_example/
     ~/.config/kitty: kitty
 
 # - create:
