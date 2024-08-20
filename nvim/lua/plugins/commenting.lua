@@ -1,14 +1,14 @@
 
 return {
   -- absolute and relative line numbering
-  {
-    "sitiom/nvim-numbertoggle",
-  },
+  -- TODO
 
   -- Better Comment
-  {
-    "tpope/vim-commentary",
-  },
+{ 'echasnovski/mini.comment', version = '*',
+    config = function()
+        require('mini.comment').setup() 
+    end,
+},
 
   -- IndentLine
   {

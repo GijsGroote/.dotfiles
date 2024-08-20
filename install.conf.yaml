@@ -7,8 +7,8 @@
 - link:
     ~/.bashrc: bash/.bashrc
     ~/.profile: bash/.profile
-    ~/.config/nvim: nvim
-    #~/.config/nvim: mwe_nvim/lazy_starter/
+    #~/.config/nvim: nvim
+    ~/.config/nvim: mwe_nvim/lazy_starter/
     ~/.config/kitty: kitty
 
 # - create:

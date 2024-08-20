@@ -1,6 +1,10 @@
 
- -- mini.icons 
+-- mini.icons 
 return {
-  { 'echasnovski/mini.nvim', version = false },
+    { 'echasnovski/mini.icons', version = false,
+        config = function()
+            require('mini.icons').setup()
+            end,
+    },
 }
 
