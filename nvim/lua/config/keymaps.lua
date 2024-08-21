@@ -22,16 +22,30 @@ keymap('n', '<leader>sp', '<Cmd>setlocal spell! spelllang=en_us<CR>', default_op
 -- paste and keep yanked text in default buffer
 keymap('x', '<leader>p', '\'_dP', default_opts)
 
--- TODO: this should be at the lsp
--- keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename() <cr>', default_opts)
-
--- save on control-s
-keymap('n', '<C-s>', '<cmd>:w<cr>', default_opts)
+-- saving file
+keymap('n', '<C-s>', '<Cmd>:w<CR>', default_opts)
+keymap('i', '<C-s>', '<Esc><Cmd>:w<CR>', default_opts)
 
 -- typing vy or vd is faster than yy or dd
 keymap('n', 'vy', 'yy', default_opts)
 keymap('n', 'vd', 'dd', default_opts)
 
-keymap('n', 'Q', '<Cmd>qall<CR>', default_opts)
+keymap('n', '<leader>Q', '<Cmd>qall<CR>', default_opts)
+
+keymap('n', '<leader>y', '"+y', default_opts)
+
+-- TODO: Make this copy the current line
+-- keymap("n", "<leader>y", '"*y :let @+=@*<CR>', default_opts)
+keymap("n", "<leader>p", '"+p', default_opts)
+
+-- idea make control-shift c and control shift v the global copy thingy
+keymap("n", "<leader>y", '"*y :let @+=@*<CR>', default_opts)
+
+-- keymap("v", "<C-S-c>", '"*y :let @+=@*<CR>', default_opts)
+-- keymap("v", "<C-S>c", '"*y :let @+=@*<CR>', default_opts)
+
+keymap("v", "<leader>y", '"*y :let @+=@*<CR>', default_opts)
+keymap("v", "<leader>p", '"+p', default_opts)
+
 
 
