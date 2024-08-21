@@ -111,6 +111,8 @@ alias icat="kitty +kitten icat"
 alias p3='python3' 
 alias p2='python2' 
 
+# open with default program
+alias op='xdg-open' 
 # add neovim to path
 alias vim="nvim"
 alias vi="nvim"
