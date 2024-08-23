@@ -1,9 +1,8 @@
+local opt = vim.opt
 
 -- leaders
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
-
-local opt = vim.opt
 
 -- Indentation
 opt.tabstop = 4
@@ -24,3 +23,5 @@ vim.api.nvim_exec([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=300})
   augroup END
 ]], false)
+
+

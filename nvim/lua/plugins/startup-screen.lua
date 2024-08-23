@@ -25,7 +25,7 @@ return {
   
           local default_header = {
               type = "text",
-              val = "random ancii art?",
+              val = "",
           -- require("config.ancii.ancii").get_random_ancii_art(),
               opts = {
                   position = "center",

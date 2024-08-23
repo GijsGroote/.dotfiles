@@ -38,14 +38,14 @@ keymap('n', '<leader>y', '"+y', default_opts)
 -- keymap("n", "<leader>y", '"*y :let @+=@*<CR>', default_opts)
 keymap("n", "<leader>p", '"+p', default_opts)
 
--- idea make control-shift c and control shift v the global copy thingy
 keymap("n", "<leader>y", '"*y :let @+=@*<CR>', default_opts)
-
--- keymap("v", "<C-S-c>", '"*y :let @+=@*<CR>', default_opts)
--- keymap("v", "<C-S>c", '"*y :let @+=@*<CR>', default_opts)
-
 keymap("v", "<leader>y", '"*y :let @+=@*<CR>', default_opts)
 keymap("v", "<leader>p", '"+p', default_opts)
 
+-- Move lines up/down with Alt+k and Alt+j
+keymap('n', '<M-k>', ':m .-2<CR>==', default_opts)
+keymap('n', '<M-j>', ':m .+1<CR>==', default_opts)
+keymap('v', '<m-k>', ":m '<-2<cr>gv=gv", default_opts)
+keymap('v', '<m-j>', ":m '>+1<cr>gv=gv", default_opts)
 
 

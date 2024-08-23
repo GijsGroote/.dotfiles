@@ -9,7 +9,4 @@ return {
         vim.cmd([[colorscheme tokyonight]])
       end,
     },
-  
-    { "nvim-tree/nvim-web-devicons", lazy = true },
-  
-  }
+}
