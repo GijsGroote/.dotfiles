@@ -14,6 +14,6 @@ return {
         }
       end,
 keys = {
-    { "<leader>e", [[ <Cmd>NvimTreeToggle<CR> ]], desc = "Open/Close Nvim Tree" },
+    { "<leader>e", [[ <Cmd>NvimTreeFindFileToggle<CR> ]], desc = "Open/Close Nvim Tree" },
   },
 }

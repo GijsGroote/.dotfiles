@@ -75,7 +75,7 @@ return {
               type = "group",
               val = {
             -- todo fix thos buttons, they are nice
-                  button("e", "  New File", "<Cmd>ene <BAR> startinsert <CR>"),
+                  button("n", "  New File", "<Cmd>ene <BAR> startinsert <CR>"),
                   -- button("f", "󰈞  Find File", 'require("telescope.builtin").find_files()'),
                   button("d", ".  Open Dotfiles", "<Cmd>e ~/.dotfiles/ <CR>"),
                   button("c", "  Configuration", "<Cmd>n ~/.dotfiles/nvim/lua/plugins/plugins.lua <CR>"),
