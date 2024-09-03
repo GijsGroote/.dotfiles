@@ -1,17 +1,14 @@
 -- Startup screen
-
 return {
 
     {'goolord/alpha-nvim',
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-  
-      -- Warning: long configuration function
-      config = function() 
-  
+
+      config = function()
           local if_nil = vim.F.if_nil
-  
+
           local default_terminal = {
               type = "terminal",
               command = nil,
@@ -22,7 +19,7 @@ return {
                   window_config = {},
               },
           }
-  
+
           local default_header = {
               type = "text",
               val = "",
@@ -33,17 +30,17 @@ return {
                   -- wrap = "overflow";
               },
           }
-  
-  
+
+
           local leader = " "
-  
+
           --- @param sc string
           --- @param txt string
           --- @param keybind string? optional
           --- @param keybind_opts table? optional
           local function button(sc, txt, keybind, keybind_opts)
               local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
-  
+
               local opts = {
                   position = "center",
                   shortcut = sc,
@@ -56,12 +53,12 @@ return {
                   keybind_opts = if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
                   opts.keymap = { "n", sc_, keybind, keybind_opts }
               end
-  
+
               local function on_press()
                   local key = vim.api.nvim_replace_termcodes(keybind or sc_ .. "<Ignore>", true, false, true)
                   vim.api.nvim_feedkeys(key, "t", false)
               end
-  
+
               return {
                   type = "button",
                   val = txt,
@@ -69,8 +66,8 @@ return {
                   opts = opts,
               }
           end
-  
-  
+
+
           local buttons = {
               type = "group",
               val = {
@@ -89,22 +86,22 @@ return {
             hl_shortcut = "Type",
               },
           }
-  
+
           local stats = require("lazy").stats()
           local plugins_text =
             "  loaded "
-            .. stats.count 
-            .. " plugins - NeoVim v" 
+            .. stats.count
+            .. " plugins - NeoVim v"
             .. vim.version().major
             .. "."
             .. vim.version().minor
           .. "."
           .. vim.version().patch
-  
+
           -- Quote
           local fortune = require "alpha.fortune"
           local quote = table.concat(fortune(), "\n")
-  
+
           local footer = {
               type = "text",
               val = plugins_text .. "\n" .. quote,
@@ -113,14 +110,14 @@ return {
                   hl = "Constant",
               },
           }
-  
+
           local section = {
               terminal = default_terminal,
               header = default_header,
               buttons = buttons,
               footer = footer,
           }
-  
+
           local config = {
               layout = {
                   { type = "padding", val = 2 },
@@ -133,32 +130,32 @@ return {
                   margin = 5,
               },
           }
-  
+
         local alpha = require('alpha')
         alpha.setup(config)
-  
-  
+
+
         vim.api.nvim_create_autocmd("User", {
           pattern = "LazyVimStarted",
           callback = function()
-  
+
             local stats = require("lazy").stats()
             local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-  
+
             -- print(' loaded in ',ms)
-  
+
             local plugins_text =
             "  loaded "
-            .. stats.count 
+            .. stats.count
             .. " plugins in "
-            .. ms 
-            .. " ms  v" 
+            .. ms
+            .. " ms  v"
             .. vim.version().major
             .. "."
             .. vim.version().minor
             .. "."
             .. vim.version().patch
-  
+
             local footer = {
               type = "text",
               val = plugins_text .. "\n" .. quote,
@@ -167,14 +164,14 @@ return {
                 hl = "Constant",
               },
             }
-  
+
             local section = {
               terminal = default_terminal,
               header = default_header,
               buttons = buttons,
               footer = footer,
             }
-  
+
             local config = {
               layout = {
                 { type = "padding", val = 2 },
@@ -187,13 +184,13 @@ return {
                 margin = 5,
               },
             }
-  
+
             local alpha = require('alpha')
             pcall(alpha.refresh)
-  
+
           end,
         })
       end
     }
   }
-  
+

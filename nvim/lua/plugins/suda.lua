@@ -6,4 +6,3 @@ return {
     { "<leader>sw", "<cmd>SudaWrite<CR>", desc = "sudo write" },
   },
 }
-

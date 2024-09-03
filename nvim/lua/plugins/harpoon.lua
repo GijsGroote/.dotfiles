@@ -1,6 +1,3 @@
-
---- Harpoon
-
 return {
   {
     "ThePrimeagen/harpoon",
