@@ -1,15 +1,4 @@
 return {
-    -- the colorscheme should be available when starting Neovim
-    {
-        "folke/tokyonight.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            -- load the colorscheme here
-            vim.cmd([[colorscheme tokyonight]])
-            -- vim.cmd([[colorscheme habamax]])
-        end,
-    },
 
   -- Editor Extensions
   "ionide/Ionide-vim",
@@ -49,7 +38,7 @@ return {
     -- { "folke/neodev.nvim", enabled = false }, -- make sure to uninstall or disable neodev.nvim
   },
   "neovim/nvim-lspconfig",
-  { "folke/trouble.nvim", dependencies = "kyazdani42/nvim-web-devicons", opts = {} },
+  { "folke/trouble.nvim", dependencies = "nvim-tree/nvim-web-devicons", opts = {} },
   "hrsh7th/cmp-nvim-lsp-signature-help",
   {
     "hrsh7th/cmp-vsnip",
