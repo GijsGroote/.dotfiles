@@ -1,0 +1,43 @@
+nil
+table: 0x7a363a9090e0
+table: 0x7a363a9091a8
+chioosing thisnil
+nil
+table: 0x738d9f283470
+table: 0x738d9f1ce718
+chioosing thisIf you don't finish then you're just busy, not productive.
+nil
+table: 0x7bf05052d718
+table: 0x7bf0504d8718
+chioosing thisIf you don't finish then you're just busy, not productive.
+nil
+table: 0x780fdd0d99f8
+table: 0x780fdd0d9ac0
+chioosing thisFools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.
+chioosing this
+chioosing this- Alan Perlis
+nil
+table: 0x7a0fb36660a8
+table: 0x7a0fb3666168
+chioosing thisFools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.
+chioosing this
+chioosing this- Alan Perlis
+nil
+table: 0x7c5184d08420
+table: 0x7c5184f60950
+chioosing thisDebugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+chioosing this
+chioosing this- Brian Kernighan
+chioosing thisIf you don't fail at least 90% of the time, you're not aiming high enough.
+chioosing this
+chioosing this- Alan Kay
+chioosing thisNo matter how far down the wrong road you have gone, turn back now.
+chioosing thisComplexity kills. It sucks the life out of developers, it makes products difficult to plan, build and test, it introduces security challenges, and it causes end-user and administrator frustration.
+chioosing this
+chioosing this- Ray Ozzie
+chioosing thisPut abstractions in code, details in metadata.
+chioosing this
+chioosing thisProgram for the general case, and put the specifics outside the compiled code base.
+chioosing thisMost of you are familiar with the virtues of a programmer. There are three, of course: laziness, impatience, and hubris.
+chioosing this
+chioosing this- Larry Wall

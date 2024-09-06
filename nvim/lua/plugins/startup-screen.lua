@@ -7,7 +7,7 @@ return {
         require('dashboard').setup({
             theme = 'doom',
             config = {
-                header = require("config.ancii.ancii").get_random_ancii_art(),
+                header = require("config.arts.art").get_random_art(),
                 center = {
                     {
                         icon = '📝',
