@@ -30,17 +30,20 @@ keymap('i', '<C-s>', '<Esc><Cmd>:w<CR>', default_opts)
 keymap('n', 'vy', 'yy', default_opts)
 keymap('n', 'vd', 'dd', default_opts)
 
+-- quit nvim
 keymap('n', '<leader>Q', '<Cmd>qall<CR>', default_opts)
 
-keymap('n', '<leader>y', "'+y", default_opts)
 
--- TODO: Make this copy the current line
--- keymap('n', '<leader>y', ''*y :let @+=@*<CR>', default_opts)
-keymap('n', '<leader>p', "'+p", default_opts)
+-- copy to global clipboard
+keymap('n', '<leader>y', '"+y', default_opts)
+keymap('v', '<leader>y', '"+y', default_opts)
 
-keymap('n', '<leader>y', "'*y :let @+=@*<CR>", default_opts)
-keymap('v', '<leader>y', "'*y :let @+=@*<CR>", default_opts)
-keymap('v', '<leader>p', "'+p", default_opts)
+-- past 
+keymap('n', '<leader>p', '"_dp', default_opts)
+keymap('v', '<leader>p', '"_dp', default_opts)
+
+-- keymap('n', '<leader>y', "'*y :let @+=@*<CR>", default_opts)
+-- keymap('v', '<leader>y', "'*y :let @+=@*<CR>", default_opts)
 
 -- Move lines up/down with Alt+k and Alt+j
 keymap('n', '<M-k>', ':m .-2<CR>==', default_opts)
