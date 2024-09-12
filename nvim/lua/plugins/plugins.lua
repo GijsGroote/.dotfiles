@@ -84,6 +84,4 @@ return {
   -- Programming
   "ii14/neorepl.nvim",
   "theHamsta/nvim-dap-virtual-text",
-  "saecki/crates.nvim",
-  "simrat39/rust-tools.nvim",
 }

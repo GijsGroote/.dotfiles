@@ -1,8 +1,5 @@
 -- custom keymaps
 
-local api = vim.api
-local g = vim.g
-
 -- keymaps that do not contain the leader key as prefix
 local keymap = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
@@ -54,3 +51,5 @@ keymap('v', 'cn', '<Cmd>cnext<CR>', default_opts)
 
 -- remove all trailing white space in file
 keymap('n', '<leader>rw', ' <Cmd>:%s/\\s\\+$//e<CR>', default_opts)
+
+keymap('i', '(', 'v:lua.expand_parens()', {silent = true, expr = true, noremap = false})
