@@ -52,4 +52,3 @@ keymap('v', 'cn', '<Cmd>cnext<CR>', default_opts)
 -- remove all trailing white space in file
 keymap('n', '<leader>rw', ' <Cmd>:%s/\\s\\+$//e<CR>', default_opts)
 
-keymap('i', '(', 'v:lua.expand_parens()', {silent = true, expr = true, noremap = false})
