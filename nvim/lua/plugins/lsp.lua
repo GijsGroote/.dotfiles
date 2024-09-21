@@ -7,4 +7,5 @@ return {
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
     "mhartington/formatter.nvim",
+    "mfussenegger/nvim-dap-python",
 }

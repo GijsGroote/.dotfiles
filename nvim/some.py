@@ -1,15 +1,31 @@
+import sys
 
-return {
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-      config = function()
-        require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/lua/config/luasnip/"})
-    end,
-	build = "make install_jsregexp"
-}
 
-print
-ll
-kjsdfksdj
+
+class TestClass():
+
+    def __init__(self, *args, **kwargs):
+        self.number = 1
+        print(f'initialise with some args maypbe {args}, kwargs? {kwargs}')
+        
+
+    def add(self, a, b):
+        ''' Open dialog to edit the settings. '''
+        return a + b
+
+    def subtract(self, a, b):
+        ''' Open the search job dialog. '''
+        print('subtarcting')
+        a = 5
+
+        return a - b
+
+if __name__ == '__main__':
+    test = TestClass(sys.argv)
+    test.add(1, 2)
+    x = 15
+    print(test.subtract(1, 2))
+
+
+
+

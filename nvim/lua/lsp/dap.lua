@@ -2,34 +2,36 @@ local dap, dapui = require "dap", require "dapui"
 
 require("dapui").setup()
 
+
+
 dap.adapters.dockerfile = {
   type = "executable",
   command = "buildg",
   args = { "dap", "serve" },
 }
 
-require("dap-go").setup {
-  -- :help dap-configuration
-  dap_configurations = {
-    {
-      -- Must be "go" or it will be ignored by the plugin
-      type = "go",
-      name = "Attach remote",
-      mode = "remote",
-      request = "attach",
-    },
-  },
-  -- delve configurations
-  delve = {
-    -- time to wait for delve to initialize the debug session.
-    -- default to 20 seconds
-    initialize_timeout_sec = 20,
-    -- a string that defines the port to start delve debugger.
-    -- default to string "${port}" which instructs nvim-dap
-    -- to start the process in a random available port
-    port = "${port}",
-  },
-}
+-- require("dap-go").setup {
+--   -- :help dap-configuration
+--   dap_configurations = {
+--     {
+--       -- Must be "go" or it will be ignored by the plugin
+--       type = "go",
+--       name = "Attach remote",
+--       mode = "remote",
+--       request = "attach",
+--     },
+--   },
+--   -- delve configurations
+--   delve = {
+--     -- time to wait for delve to initialize the debug session.
+--     -- default to 20 seconds
+--     initialize_timeout_sec = 20,
+--     -- a string that defines the port to start delve debugger.
+--     -- default to string "${port}" which instructs nvim-dap
+--     -- to start the process in a random available port
+--     port = "${port}",
+--   },
+-- }
 
 dap.configurations.lua = {
   {
@@ -50,20 +52,20 @@ dap.adapters.lldb = {
   name = "lldb",
 }
 
-dap.configurations.rust = {
-  {
-    name = "Launch",
-    type = "lldb",
-    request = "launch",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-    end,
-    cwd = "${workspaceFolder}",
-    stopOnEntry = false,
-    args = {},
-    runInTerminal = false,
-  },
-}
+-- dap.configurations.rust = {
+--   {
+--     name = "Launch",
+--     type = "lldb",
+--     request = "launch",
+--     program = function()
+--       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+--     end,
+--     cwd = "${workspaceFolder}",
+--     stopOnEntry = false,
+--     args = {},
+--     runInTerminal = false,
+--   },
+-- }
 
 dap.configurations.dockerfile = {
   {

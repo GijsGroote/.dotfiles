@@ -1,8 +1,10 @@
 require "lspconfig"
-require("nvim-dap-virtual-text").setup()
+
+local dap_virt_text = require("nvim-dap-virtual-text")
+dap_virt_text.setup()
+-- require("nvim-dap-virtual-text").setup()
 
 local def = require "lsp.default-lsp"
-
 local lspconfig = require "lspconfig"
 local util = require 'lspconfig.util'
 
@@ -87,3 +89,26 @@ https://github.com/microsoft/pyright
 ]],
   },
 }
+
+
+-- DAP for python
+local dap = require "dap"
+require("dap-python").setup("python")
+
+local wk = require("which-key")
+
+wk.add({
+    group = "Debugger",
+    name = "eDDDbugger",
+    mode = { "n", "t" },
+    { "<leader>dt", dap.terminate, desc = "Terminate Debugger" },
+    {"<leader>dc",  dap.continue, desc = "Start/Continue Debugger" },
+    { "<leader>dl", dap.run_last, desc = "Run Last Debug Session" },
+    { "<leader>dk", dap.up, desc = "Go up the stacktrace" },
+    { "<leader>dj", dap.down, desc = "Go down the stacktrace" },
+    { "<leader>di", dap.step_into, desc = "Step into the current code." },
+    { "<leader>do", dap.step_out, desc = "Step out of the current code." },
+    { "<leader>db", dap.toggle_breakpoint, desc = 'Toggle Breakpiont'},
+    { "<leader>B", dap.toggle_breakpoint, desc = 'Toggle Breakpiont'},
+})
+
