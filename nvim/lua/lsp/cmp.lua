@@ -74,6 +74,8 @@ cmp.setup {
   },
 
   sources = {
+    { name = "copilot" },
+    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua", priority = 100 },
     { name = "vsnip" },

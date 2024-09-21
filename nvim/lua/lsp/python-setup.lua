@@ -90,7 +90,6 @@ https://github.com/microsoft/pyright
   },
 }
 
-
 -- DAP for python
 local dap = require "dap"
 require("dap-python").setup("python")
