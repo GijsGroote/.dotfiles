@@ -17,7 +17,7 @@ keymap('n', 'M', 'i<CR><C-c>k$', default_opts)
 keymap('n', '<leader>sp', '<Cmd>setlocal spell! spelllang=en_us<CR>', default_opts)
 
 -- paste and keep yanked text in default buffer
-keymap('x', '<leader>p', '\'_dP', default_opts)
+keymap('x', '<leader>p', '"_dP"+y', default_opts)
 
 -- saving file
 keymap('n', '<C-s>', '<Cmd>:w<CR>', default_opts)

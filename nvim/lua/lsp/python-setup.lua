@@ -106,7 +106,6 @@ wk.add({
     { "<leader>dk", dap.up, desc = "Go up the stacktrace" },
     { "<leader>dj", dap.down, desc = "Go down the stacktrace" },
     { "<leader>di", dap.step_into, desc = "Step into the current code." },
-    { "<leader>do", dap.step_out, desc = "Step out of the current code." },
     { "<leader>db", dap.toggle_breakpoint, desc = 'Toggle Breakpiont'},
     { "<leader>B", dap.toggle_breakpoint, desc = 'Toggle Breakpiont'},
 })
