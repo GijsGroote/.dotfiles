@@ -95,9 +95,17 @@ function M.get_random_art()
 
         return ancii
     else
-        -- randomly select a quote
-        local quotes = require("config.arts.quotes")
-        local quote = quotes[math.random(1, #quotes)]
+        -- Combine both tables
+        local all_quotes = {}
+        for _, personal_quote in ipairs(require("config.arts.personal_quotes")) do
+            table.insert(all_quotes, personal_quote)
+        end
+
+        for _, quote in ipairs(require("config.arts.quotes")) do
+            table.insert(all_quotes, quote)
+        end
+
+        local quote = all_quotes[math.random(1, #all_quotes)]
 
         local max_line_length = 50
         local t = {'','',''}

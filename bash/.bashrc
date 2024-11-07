@@ -121,6 +121,7 @@ alias vi="nvim"
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # add mcrl2 directory to path
 export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
+export PATH="/root/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
 # add poetry
 export PATH="/home/gijs/.local/bin:$PATH"
