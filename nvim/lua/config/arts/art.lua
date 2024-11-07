@@ -107,7 +107,7 @@ function M.get_random_art()
 
         local quote = all_quotes[math.random(1, #all_quotes)]
 
-        local max_line_length = 50
+        local max_line_length = 70
         local t = {'','',''}
 
         -- create table with quote
