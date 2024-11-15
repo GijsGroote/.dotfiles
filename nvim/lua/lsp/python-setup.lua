@@ -41,7 +41,7 @@ local function set_python_path(path)
     client.notify('workspace/didChangeConfiguration', { settings = nil })
   end
 end
-lspconfig.ruff_lsp.setup {
+lspconfig.ruff.setup {
   capabilities = def.capabilities,
   on_attach = def.on_attach,
   default_config = {

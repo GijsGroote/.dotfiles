@@ -141,5 +141,5 @@ poetry completions bash >> ~/.bash_completion
 
 # cd ~/Documents/creator_administrator
 # cd ~/Documents
-cd ~/Documents/Magneto-Print-Manager
-poetry shell
+# cd ~/Documents/Magneto-Print-Manager
+# poetry shell
