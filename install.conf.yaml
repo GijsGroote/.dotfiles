@@ -8,6 +8,7 @@
     ~/.bashrc: bash/.bashrc
     ~/.profile: bash/.profile
     ~/.config/nvim: nvim
+    # ~/.config/nvim: mwe_nvim
     ~/.config/kitty: kitty
 
 - shell:

@@ -35,7 +35,7 @@ keymap('n', '<leader>Q', '<Cmd>qall<CR>', default_opts)
 keymap('n', '<leader>y', '"+y', default_opts)
 keymap('v', '<leader>y', '"+y', default_opts)
 
--- past 
+-- past
 keymap('n', '<leader>p', '"_dp', default_opts)
 keymap('v', '<leader>p', '"_dp', default_opts)
 
@@ -47,8 +47,12 @@ keymap('n', '<M-k>', ':m .-2<CR>==', default_opts)
 keymap('n', '<M-j>', ':m .+1<CR>==', default_opts)
 keymap('v', '<m-k>', ":m '<-2<cr>gv=gv", default_opts)
 keymap('v', '<m-j>', ":m '>+1<cr>gv=gv", default_opts)
-keymap('v', 'cn', '<Cmd>cnext<CR>', default_opts)
+keymap('v', 'cn', '<Cmd>cnext<CR>', default_opts)   
 
--- remove all trailing white space in file
+-- remove all trailing white space in file 
 keymap('n', '<leader>rw', ' <Cmd>:%s/\\s\\+$//e<CR>', default_opts)
 
+keymap('n', '<leader>P', ' <Cmd>:%s/\\s\\+$//e<CR>', default_opts)
+
+-- Reload configuration without restart nvim
+keymap("n", "<C-r>", ":source $MYVIMRC<CR>", { desc = "Reload configuration without restart nvim" })

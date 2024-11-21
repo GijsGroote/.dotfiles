@@ -2,7 +2,7 @@
 return {
 
   -- sorter that prioritized file names over folder names
-  {"natecraddock/telescope-zf-native.nvim"},
+  -- {"natecraddock/telescope-zf-native.nvim"},
 
   -- change some telescope options and a keymap to browse plugin files
   {
@@ -66,8 +66,8 @@ return {
         { "natecraddock/telescope-zf-native.nvim"},
       },
 
-      -- { "nvim-telescope/telescope.nvim", dependencies = "tsakirist/telescope-lazy.nvim" },
-      -- { "natecraddock/telescope-zf-native.nvim"},
+      { "nvim-telescope/telescope.nvim", dependencies = "tsakirist/telescope-lazy.nvim" },
+      { "natecraddock/telescope-zf-native.nvim"},
 
     }
   }

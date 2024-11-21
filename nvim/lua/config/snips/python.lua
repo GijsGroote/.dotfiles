@@ -5,7 +5,6 @@ local i = ls.insert_node
 
 return {
 
-
   s({trig="mama", dscr="Expands python yo MAMA"},
   {
     t({"def MAMA():",

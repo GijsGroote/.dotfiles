@@ -1,7 +1,6 @@
 return {
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-  },
+  "nvim-lualine/lualine.nvim",
+  opts = function()
+    require("config.lualine")
+  end
 }
-
