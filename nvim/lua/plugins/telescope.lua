@@ -38,6 +38,11 @@ return {
         desc = "Find buffers",
       },
       { -- Lists available help tags and opens a new window with the relevant help info on
+        "<leader>fr",
+        function() require("telescope.builtin").oldfiles() end,
+        desc = "Find recent files",
+      },
+      { -- Lists available help tags and opens a new window with the relevant help info on
         "<leader>fh",
         function() require("telescope.builtin").help_tags() end,
         desc = "Find help tags",

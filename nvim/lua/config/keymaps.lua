@@ -55,4 +55,5 @@ keymap('n', '<leader>rw', ' <Cmd>:%s/\\s\\+$//e<CR>', default_opts)
 keymap('n', '<leader>P', ' <Cmd>:%s/\\s\\+$//e<CR>', default_opts)
 
 -- Reload configuration without restart nvim
-keymap("n", "<C-r>", ":source $MYVIMRC<CR>", { desc = "Reload configuration without restart nvim" })
+-- TODO: this keymap conficts with redo keymap
+-- keymap("n", "<C-r>", ":source $MYVIMRC<CR>", { desc = "Reload configuration without restart nvim" })
