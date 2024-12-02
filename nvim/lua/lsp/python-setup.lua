@@ -98,7 +98,7 @@ local wk = require("which-key")
 
 wk.add({
     group = "Debugger",
-    name = "eDDDbugger",
+    name = "debugger",
     mode = { "n", "t" },
     { "<leader>dt", dap.terminate, desc = "Terminate Debugger" },
     {"<leader>dc",  dap.continue, desc = "Start/Continue Debugger" },

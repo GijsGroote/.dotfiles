@@ -33,4 +33,3 @@ vim.opt.clipboard="unnamedplus"
 
 -- vimtex/latex stuff
 vim.g.vimtex_compiler_method = 'latexrun'
-

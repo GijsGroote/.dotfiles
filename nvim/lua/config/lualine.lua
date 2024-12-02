@@ -102,7 +102,11 @@ local config = {
         -- Disable sections and component separators
         component_separators = "",
         section_separators = "",
-        disabled_filetypes = { "Lazy", "NvimTree" },
+        disabled_filetypes = {
+            statusline = { "Lazy", "NvimTree", "dashboard", "alpha" },
+            winbar = { "dashboard", "alpha" },
+        },
+
         theme = {
             -- We are going to use lualine_c an lualine_x as left and
             -- right section. Both are highlighted by c theme .  So we

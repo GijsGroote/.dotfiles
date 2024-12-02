@@ -7,13 +7,21 @@ return {
   },
   config = function()
     require("nvim-tree").setup {
-        view = {
-          side = "right",
-          width = 35,
-            }
-        }
-      end,
-keys = {
+      view = {
+        side = "right",
+        width = 35,
+      },
+      filters = {
+        dotfiles = false, -- Show hidden files (dotfiles)
+        custom = {}, -- Do not filter any files
+      },
+      git = {
+        ignore = false, -- Show files ignored by .gitignore
+      },
+    }
+  end,
+  keys = {
     { "<leader>e", [[ <Cmd>NvimTreeFindFileToggle<CR> ]], desc = "Open/Close Nvim Tree" },
   },
 }
+
