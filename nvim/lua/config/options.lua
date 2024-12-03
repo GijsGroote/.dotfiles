@@ -30,6 +30,8 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.opt.clipboard="unnamedplus"
 
+-- turn on relative line numbering
+opt.relativenumber = true
 
 -- vimtex/latex stuff
 vim.g.vimtex_compiler_method = 'latexrun'
