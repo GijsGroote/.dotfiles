@@ -107,14 +107,13 @@ QT_QPA_PLATFORM=wayland
 # kitty terminator view image
 alias icat="kitty +kitten icat"
 
-# shorten the name for python3 and python2
+# shorten the name for python3
 alias p3='python3' 
-alias p2='python2' 
 
 # open with default program
 alias op='xdg-open' 
-# add neovim to path
-alias vim="nvim"
+
+# shorten name for neovim
 alias vi="nvim"
 
 # add latex directory to path
@@ -122,6 +121,9 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # add mcrl2 directory to path
 export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 export PATH="/root/.local/share/gem/ruby/3.3.0/bin:$PATH"
+
+# export LLVM_CONFIG 
+export LLVM_CONFIG=/usr/bin/llvm-config-14
 
 # add poetry
 export PATH="/home/gijs/.local/bin:$PATH"
@@ -134,12 +136,11 @@ set -o vi
 # git <TAB> completion
 source /usr/share/bash-completion/completions/git
 
-
 eval "$(zoxide init bash)"
 poetry completions bash >> ~/.bash_completion
 
 
 # cd ~/Documents/creator_administrator
 # cd ~/Documents
-# cd ~/Documents/Magneto-Print-Manager
+cd ~/Documents/Magneto-Print-Manager
 # poetry shell
