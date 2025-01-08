@@ -4,5 +4,4 @@ return {
     keys = {
       {"<leader>md", ":Glow<CR>", desc = "View Markdown File"}
     },
-    cmd = "Glow"
 }
