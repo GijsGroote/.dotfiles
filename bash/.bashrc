@@ -122,6 +122,9 @@ export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 export PATH="/home/gijs/Documents/mcrl2/src/stage/bin:$PATH"
 export PATH="/root/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
+# add Rust to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # export LLVM_CONFIG 
 export LLVM_CONFIG=/usr/bin/llvm-config-14
 
@@ -145,3 +148,4 @@ poetry completions bash >> ~/.bash_completion
 # cd ~/Documents/Magneto-Print-Manager
 cd ~/Documents
 # poetry shell
+. "$HOME/.cargo/env"

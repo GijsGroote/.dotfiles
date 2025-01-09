@@ -101,9 +101,9 @@ function M.get_random_art()
             table.insert(all_quotes, personal_quote)
         end
 
-        -- for _, quote in ipairs(require("config.arts.quotes")) do
-        --     table.insert(all_quotes, quote)
-        -- end
+        for _, quote in ipairs(require("config.arts.quotes")) do
+            table.insert(all_quotes, quote)
+        end
 
         local quote = all_quotes[math.random(1, #all_quotes)]
 
