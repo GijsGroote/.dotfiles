@@ -114,7 +114,7 @@ alias p3='python3'
 alias op='xdg-open' 
 
 # shorten name for neovim
-alias vi="nvim"
+alias v="nvim"
 
 # add latex directory to path
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
