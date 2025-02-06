@@ -1,3 +1,5 @@
+-- Easily switch between files
+
 return {
   {
     "ThePrimeagen/harpoon",

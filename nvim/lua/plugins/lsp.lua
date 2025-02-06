@@ -1,5 +1,6 @@
 -- LSP
 return {
+  "ionide/Ionide-vim",
   "ray-x/lsp_signature.nvim",
   "ibhagwan/fzf-lua",
   "onsails/lspkind-nvim",
