@@ -1,4 +1,5 @@
 -- telescope and other
+
 return {
 
   -- sorter that prioritized file names over folder names

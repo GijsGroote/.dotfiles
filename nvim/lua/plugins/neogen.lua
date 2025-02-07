@@ -1,3 +1,5 @@
+-- Auto generate comments
+
 return {
     "danymat/neogen",
     config = true,

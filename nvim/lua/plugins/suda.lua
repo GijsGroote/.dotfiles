@@ -1,4 +1,5 @@
 -- Suda for super user privileges
+
 return {
   "lambdalisue/suda.vim",
   keys = {

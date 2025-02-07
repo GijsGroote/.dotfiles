@@ -1,3 +1,5 @@
+-- Latex plugin
+
 return {
   "lervag/vimtex",
   lazy = false,     -- we don't want to lazy load VimTeX
@@ -14,4 +16,3 @@ return {
     vim.g.vimtex_quickfix_mode = 0  -- Disable automatic quickfix list popup
   end
 }
-

@@ -1,3 +1,5 @@
+-- Which key creates pop ups to show availeble keymaps.
+
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",

@@ -1,3 +1,5 @@
+-- To change between snake_case, camelCase, PascalCase and kebab-case
+
 return {
   "johmsalas/text-case.nvim",
   dependencies = { "nvim-telescope/telescope.nvim" },
@@ -6,18 +8,8 @@ return {
     require("telescope").load_extension("textcase")
   end,
   keys = {
-    {"<leader>sc", ":lua require('textcase').current_word('to_snake_case')<cr>", desc = "to snake_case"}
+    {"<leader>sc", ":lua require('textcase').current_word('to_snake_case')<cr>", desc = "to snake_case"},
+    {"<leader>cc", ":lua require('textcase').current_word('to_camel_case')<cr>", desc = "to camelCase"},
   },
-  -- cmd = {
-  --   -- NOTE: The Subs command name can be customized via the option "substitude_command_name"
-  --   "Subs",
-  --   "TextCaseOpenTelescope",
-  --   "TextCaseOpenTelescopeQuickChange",
-  --   "TextCaseOpenTelescopeLSPChange",
-  --   "TextCaseStartReplacingCommand",
-  -- },
-  -- If you want to use the interactive feature of the `Subs` command right away, text-case.nvim
-  -- has to be loaded on startup. Otherwise, the interactive feature of the `Subs` will only be
-  -- available after the first executing of it or after a keymap of text-case.nvim has been used.
   lazy = false,
 }

@@ -1,4 +1,6 @@
+-- Visualise Markdown files
 -- TODO: REPLACE WITH SOMETHING THAT CAN BE VISUALIZED WHILST EDITING
+
 return {
     "ellisonleao/glow.nvim",
     config = true,

@@ -1,3 +1,5 @@
+-- Color scheme for the NVIM setup
+
 return {
     -- the colorscheme should be available when starting Neovim
     {

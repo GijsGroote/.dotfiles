@@ -1,3 +1,5 @@
+-- Fastest way in the galaxy to use Git.
+
 return {
     "kdheepak/lazygit.nvim",
     cmd = {

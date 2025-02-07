@@ -1,4 +1,5 @@
 -- LSP
+
 return {
   "ionide/Ionide-vim",
   "ray-x/lsp_signature.nvim",
