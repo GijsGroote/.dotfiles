@@ -1,4 +1,4 @@
--- telescope and other
+-- Telescope and other
 
 return {
 
