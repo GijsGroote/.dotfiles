@@ -116,6 +116,10 @@ alias op='xdg-open'
 # shorten name for neovim
 alias v="nvim"
 
+
+# add Rust environment
+# . "$HOME/.cargo/env"
+#
 # add latex directory to path
 export PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
 # add mcrl2 directory to path
@@ -145,7 +149,6 @@ poetry completions bash >> ~/.bash_completion
 
 # cd ~/Documents/creator_administrator
 # cd ~/Documents
-# cd ~/Documents/Magneto-Print-Manager
-cd ~/Documents
-# poetry shell
-. "$HOME/.cargo/env"
+cd ~/Documents/Magneto-Print-Manager
+poetry shell
+
