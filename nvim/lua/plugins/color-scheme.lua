@@ -1,5 +1,11 @@
 -- Color scheme for the NVIM setup
 
+function LineNumberColors()
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#51B3EC', bold=true })
+    vim.api.nvim_set_hl(0, 'LineNr', { fg='white', bold=true })
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#FB508F', bold=true })
+end
+
 return {
     -- the colorscheme should be available when starting Neovim
     {
@@ -14,6 +20,7 @@ return {
             -- vim.cmd([[colorscheme tokyonight-moon]])
             -- vim.cmd([[colorscheme tokyonight]])
             -- vim.cmd([[colorscheme habamax]])
+            LineNumberColors()
         end,
     },
 
@@ -27,3 +34,4 @@ return {
     },
 
 }
+
