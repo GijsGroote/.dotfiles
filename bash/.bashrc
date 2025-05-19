@@ -115,7 +115,14 @@ alias op='xdg-open'
 
 # shorten name for neovim
 alias v="nvim"
+alias vi="nvim"
 
+# shorten name to clear terminal
+alias c="clear"
+
+
+# supress wayland text input
+export QT_LOGGING_RULES="qt.qpa.wayland.textinput=false"
 
 # add Rust environment
 # . "$HOME/.cargo/env"
@@ -147,8 +154,12 @@ eval "$(zoxide init bash)"
 poetry completions bash >> ~/.bash_completion
 
 
-# cd ~/Documents/creator_administrator
-# cd ~/Documents
-cd ~/Documents/Magneto-Print-Manager
-poetry shell
+# cd ~/Documents/2eHogeWeg111Locally
+cd ~
 
+# sync google drive with local folder
+# rclone bisync "gdrive:/2eHogeWeg111" /home/gijs/Documents/2eHogeWeg111Locally/
+alias bisync-gdrive='rclone bisync "gdrive:/2eHogeWeg111" /home/gijs/Documents/2eHogeWeg111Locally/ \
+  --log-level=INFO \
+  --track-renames \
+  --create-empty-src-dirs'
