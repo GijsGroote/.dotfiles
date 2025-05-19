@@ -89,6 +89,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -133,7 +134,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export LLVM_CONFIG=/usr/bin/llvm-config-14
 
 # add poetry
-export PATH="/home/gijs/.local/bin:$PATH"
+# export PATH="/home/gijs/.local/bin:$PATH"
 
 EDITOR=nvim
 
@@ -142,13 +143,10 @@ set -o vi
 
 # git <TAB> completion
 source /usr/share/bash-completion/completions/git
-
 eval "$(zoxide init bash)"
-poetry completions bash >> ~/.bash_completion
+# poetry completions bash >> ~/.bash_completion
 
 
 # cd ~/Documents/creator_administrator
 # cd ~/Documents
-cd ~/Documents/Magneto-Print-Manager
-poetry shell
 

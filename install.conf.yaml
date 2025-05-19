@@ -10,6 +10,7 @@
     ~/.config/nvim: nvim
     # ~/.config/nvim: mwe_nvim
     ~/.config/kitty: kitty
+    ~/.config/zathura: zathura
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
