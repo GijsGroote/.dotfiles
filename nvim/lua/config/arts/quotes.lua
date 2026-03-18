@@ -151,4 +151,5 @@ return {
     {'Walking on water and developing software from a specification are easy if both are frozen.', '', '- Edward V. Berard'},
     {'Be curious. Read widely. Try new things. I think a lot of what people call intelligence boils down to curiosity.', '', '- Aaron Swartz'},
     {'What one programmer can do in one month, two programmers can do in two months.', '', '- Frederick P. Brooks'},
+    {"Software is like sex: it's better when it's free", '', '- Linus Thorvalds'},
 }
