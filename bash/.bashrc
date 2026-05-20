@@ -109,7 +109,7 @@ QT_QPA_PLATFORM=wayland
 alias icat="kitty +kitten icat"
 
 # shorten the name for python3
-alias p3='python3' 
+alias p3='python' 
 
 # open with default program
 alias op='xdg-open' 
@@ -163,3 +163,6 @@ alias bisync-gdrive='rclone bisync "gdrive:/2eHogeWeg111" /home/gijs/Documents/2
   --log-level=INFO \
   --track-renames \
   --create-empty-src-dirs'
+
+
+alias cvi='kitty @ get-text --extent=all > /tmp/kitty_scroll.sh; vi + /tmp/kitty_scroll.sh; rm /tmp/kitty_scroll.sh'
