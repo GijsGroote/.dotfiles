@@ -166,3 +166,7 @@ alias bisync-gdrive='rclone bisync "gdrive:/2eHogeWeg111" /home/gijs/Documents/2
 
 
 alias cvi='kitty @ get-text --extent=all > /tmp/kitty_scroll.sh; vi + /tmp/kitty_scroll.sh; rm /tmp/kitty_scroll.sh'
+
+
+# alais dotnet running
+alias dr='dotnet run'
