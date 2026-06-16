@@ -1,4 +1,4 @@
-require('mason').setup()
+-- require('mason').setup()
 require('lsp.lsp-setup')
 require('lsp.cmp')
 require('lsp.dap')
