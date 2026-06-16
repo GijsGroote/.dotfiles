@@ -1,7 +1,7 @@
 local M = {}
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
-vim.lsp.set_log_level "warn" -- warn change to "debug" for more info
+vim.lsp.log.set_level("warn") -- warn change to "debug" for more info
 
 M.on_attach = function(_, bufnr)
   local nmap = function(keys, func, desc)
@@ -23,7 +23,8 @@ M.on_attach = function(_, bufnr)
   nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
   nmap("<leader>Ic", vim.lsp.buf.incoming_calls, "[I]ncoming [C]alls")
   nmap("<leader>Oc", vim.lsp.buf.outgoing_calls, "[O]utgoing [C]alls")
-  nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+  -- Commented out becuase grr is a build in gr reference reference which should handle this.
+  -- nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
   nmap("<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
   nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
   nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
@@ -38,7 +39,7 @@ M.on_attach = function(_, bufnr)
 
   nmap("<c-f>", vim.lsp.buf.format, "Format Buffer")
 
-  nmap("<leader>br", require("dap").toggle_breakpoint, "Toggle Breakpoint")
+  nmap("<leader>b", require("dap").toggle_breakpoint, "Toggle Breakpoint")
 end
 
 return M

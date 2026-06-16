@@ -23,7 +23,7 @@ local function organize_imports()
     arguments = { vim.uri_from_bufnr(0) },
   }
 
-  local clients = vim.lsp.get_active_clients {
+  local clients = vim.lsp.get_clients {
     bufnr = vim.api.nvim_get_current_buf(),
     name = 'pyright',
   }
@@ -106,7 +106,6 @@ wk.add({
     { "<leader>dk", dap.up, desc = "Go up the stacktrace" },
     { "<leader>dj", dap.down, desc = "Go down the stacktrace" },
     { "<leader>di", dap.step_into, desc = "Step into the current code." },
-    { "<leader>b", dap.toggle_breakpoint, desc = 'Toggle Breakpoint'},
     -- { "<leader>lb", dap.list_breakpoints, desc = 'List Breakpoints'},
 })
 
