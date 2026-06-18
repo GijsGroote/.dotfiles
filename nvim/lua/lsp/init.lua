@@ -1,4 +1,11 @@
--- require('mason').setup()
+require("mason").setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+    },
+})
+
+
 require('lsp.lsp-setup')
 require('lsp.cmp')
 require('lsp.dap')
