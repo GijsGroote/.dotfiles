@@ -1,14 +1,9 @@
+-- Roslyn the microsoft open-source LSP.
 local def = require("lsp.default-lsp")
 
-return {
-    "seblyng/roslyn.nvim",
-    ft = "cs",
-    opts = {
-        on_attach = function(client, bufnr)
-            client.server_capabilities.semanticTokensProvider = nil
-            def.on_attach(client, bufnr)
-        end,
+vim.lsp.config("roslyn", {
+  on_attach = def.on_attach,
+  capabilities = def.capabilities,
+})
 
-        capabilities = def.capabilities,
-    },
-}
+require("roslyn").setup({})

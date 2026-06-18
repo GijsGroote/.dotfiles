@@ -79,4 +79,7 @@ return {
   -- Programming
   "ii14/neorepl.nvim",
   "theHamsta/nvim-dap-virtual-text",
+
+  -- C#
+  "seblyng/roslyn.nvim",
 }

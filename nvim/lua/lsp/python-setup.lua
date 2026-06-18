@@ -32,7 +32,7 @@ local function organize_imports()
   end
 end
 local function set_python_path(path)
-  local clients = vim.lsp.get_active_clients {
+  local clients = vim.lsp.get_clients {
     bufnr = vim.api.nvim_get_current_buf(),
     name = 'pyright',
   }
