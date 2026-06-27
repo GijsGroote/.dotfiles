@@ -169,5 +169,6 @@ alias cvi='kitty @ get-text --extent=all > /tmp/kitty_scroll.sh; vi + /tmp/kitty
 
 
 # alais dotnet running
+alias db='dotnet build'
 alias dr='dotnet run'
 alias dt='dotnet test'
