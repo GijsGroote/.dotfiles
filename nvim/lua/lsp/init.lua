@@ -7,4 +7,5 @@ require('lsp.dap')
 require('lsp.rust-setup')
 require('lsp.python-setup')
 require('lsp.csharp-setup')
+require('lsp.qml-setup')
 
