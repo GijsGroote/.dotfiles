@@ -1,7 +1,3 @@
-# open in blackware folder
-cd /home/gijs/Documents/Blackware-Designer-Alpha
-
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -176,6 +172,7 @@ alias cvi='kitty @ get-text --extent=all > /tmp/kitty_scroll.sh; vi + /tmp/kitty
 alias db='dotnet build'
 alias dr='dotnet run'
 alias dt='dotnet test'
+alias dcr='rm -rf obj/ bin/ && dotnet build && dotnet run'
 
 
 

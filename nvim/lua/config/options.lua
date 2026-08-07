@@ -35,3 +35,5 @@ opt.relativenumber = true
 
 -- vimtex/latex stuff
 vim.g.vimtex_compiler_method = 'latexrun'
+
+vim.filetype.add({ extension = { axaml = "xml" } })
