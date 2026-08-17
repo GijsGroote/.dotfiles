@@ -1,3 +1,4 @@
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -178,3 +179,5 @@ alias dcr='rm -rf obj/ bin/ && dotnet build && dotnet run'
 
 # make rm main.!(tex) avaible
 shopt -s extglob
+
+z dumm
