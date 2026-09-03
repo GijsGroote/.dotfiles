@@ -11,7 +11,7 @@ return {
     require("nvim-tree").setup {
       view = {
         side = "right",
-        width = 35,
+        width = 45,
       },
       filters = {
         dotfiles = false, -- Show hidden files (dotfiles)

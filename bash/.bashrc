@@ -144,6 +144,9 @@ export LLVM_CONFIG=/usr/bin/llvm-config-14
 # add poetry
 # export PATH="/home/gijs/.local/bin:$PATH"
 
+# use system python3.14 for lutris (avoids /usr/local/bin's python3.11 shadowing it)
+alias lutris='/usr/bin/python3 /usr/bin/lutris'
+
 EDITOR=nvim
 
 # create vim normal mode on ESC
@@ -180,4 +183,6 @@ alias dcr='rm -rf obj/ bin/ && dotnet build && dotnet run'
 # make rm main.!(tex) avaible
 shopt -s extglob
 
-z dumm
+z OperatorGui2
+
+cd /home/gijs/Documents/dummyoperatorgui/

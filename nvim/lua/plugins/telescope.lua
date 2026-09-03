@@ -52,8 +52,8 @@ return {
     -- default looks
     opts = {
       defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "bottom" },
+        layout_strategy = "vertical",
+        layout_config = { prompt_position = "bottom", preview_height = 0.3, width = 0.90, height = 0.90 },
         sorting_strategy = "ascending",
         winblend = 0,
       },
@@ -64,7 +64,11 @@ return {
         find_files = { initial_mode = "insert", hidden = true },
         git_files = { initial_mode = "insert", },
         grep_string = { initial_mode = "insert", },
-        live_grep = { theme = "dropdown", },
+        live_grep = {
+          initial_mode = "insert",
+          layout_strategy = "vertical",
+          layout_config = { prompt_position = "bottom", preview_height = 0.3, width = 0.90, height = 0.90 },
+        },
 
       },
 
