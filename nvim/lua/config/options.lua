@@ -38,6 +38,7 @@ vim.g.vimtex_compiler_method = 'latexrun'
 
 vim.filetype.add({ extension = { axaml = "xml" } })
 
--- show the full file path (or cwd, e.g. on the dashboard) in the terminal/window title
+-- show the directory vim was started in (static, not affected by which file is open)
 opt.title = true
-opt.titlestring = "%{expand('%:p') != '' ? expand('%:p') : getcwd()}"
+vim.g.start_dir = vim.fn.getcwd()
+opt.titlestring = "%{g:start_dir}"
