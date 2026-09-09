@@ -185,4 +185,4 @@ shopt -s extglob
 
 z OperatorGui2
 
-cd /home/gijs/Documents/dummyoperatorgui/
+cd /home/gijs/Documents/

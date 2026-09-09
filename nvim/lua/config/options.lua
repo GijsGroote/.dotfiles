@@ -37,3 +37,7 @@ opt.relativenumber = true
 vim.g.vimtex_compiler_method = 'latexrun'
 
 vim.filetype.add({ extension = { axaml = "xml" } })
+
+-- show the full file path (or cwd, e.g. on the dashboard) in the terminal/window title
+opt.title = true
+opt.titlestring = "%{expand('%:p') != '' ? expand('%:p') : getcwd()}"
